@@ -1,0 +1,24 @@
+---
+import Button from '@/components/Button.astro';
+---
+
+<section class='flex gap-12 pt-8 pb-24'>
+  <div class='w-full max-w-[25rem] min-h-full flex flex-col gap-6 justify-between'>
+    <div class='flex flex-col gap-6'>
+      <h1 class='text-[2.5rem] leading-[2.5rem] font-medium text-balance'>
+        Brindamos asistencia sanitaria en zonas inhóspitas del
+        <span class='text-primary'>noroeste cordobés</span>
+      </h1>
+      <p class='text-[1.2rem] leading-[1.4rem] font-medium text-balance'>
+        Somos profesionales de la salud, estudiantes y voluntarios comprometidos con el bienestar de quienes más lo necesitan.
+      </p>
+    </div>
+    <div class='flex gap-4 mt-6'>
+      <Button href='/sobre-nosotros' class='px-8 py-3'> Sobre Nosotros </Button>
+      <Button href='/quiero-ayudar' variant='secondary' class='px-8 py-3'> Quiero ayudar </Button>
+    </div>
+  </div>
+  <div class='relative w-full min-h-full'>
+    <video src='/media/inicio/hero-video.webm' autoplay muted loop class='rounded-lg w-full h-full object-cover'></video>
+  </div>
+</section>

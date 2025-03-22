@@ -1,0 +1,76 @@
+---
+import Button from '@/components/Button.astro';
+import { ChevronDown } from 'lucide-astro';
+
+const navItems = [
+  { label: 'Inicio', href: '/' },
+  {
+    label: 'Nosotros',
+    href: '#',
+    submenu: [
+      { label: 'Quiénes somos', href: '/quienes-somos' },
+      { label: 'Qué hacemos', href: '/que-hacemos' },
+      { label: 'Galería', href: '/galeria' },
+    ],
+  },
+  { label: 'Formas de ayudar', href: '/ayudar' },
+  { label: 'Donaciones', href: '/donaciones' },
+  { label: 'Contacto', href: '/contacto' },
+];
+
+const currentPath = Astro.url.pathname;
+
+const isActive = (href: string) => {
+  if (href === '/') {
+    return currentPath === href;
+  }
+  return currentPath.startsWith(href);
+};
+
+const isSubmenuActive = (submenu: Array<{ href: string }>) => {
+  return submenu.some((item) => isActive(item.href));
+};
+---
+
+<header class='fixed w-full bg-white z-50 flex items-center justify-center px-[5%]'>
+  <div class='w-full max-w-container py-6 flex items-center justify-between'>
+    <a href='/' class='flex items-center'>
+      <img src='/logo-desktop.svg' alt='Logo de Una Gota de Salud' class='h-14 w-auto hover:opacity-70' />
+    </a>
+
+    <nav class='hidden lg:flex items-center gap-6'>
+      {
+        navItems.map((item) => (
+          <div class='relative group'>
+            <a
+              href={item.href}
+              class:list={[
+                'text-gray-700 hover:text-primary transition-colors font-medium flex items-center gap-1',
+                (isActive(item.href) || (item.submenu && isSubmenuActive(item.submenu))) && 'text-primary border-b-2 border-primary',
+              ]}
+            >
+              {item.label}
+              {item.submenu && <ChevronDown class='w-4 h-4' />}
+            </a>
+            {item.submenu && (
+              <div class='absolute hidden group-hover:block top-full left-0 bg-white shadow-lg rounded-md py-2 min-w-[12rem]'>
+                {item.submenu.map((subitem) => (
+                  <a
+                    href={subitem.href}
+                    class:list={[
+                      'block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary font-medium',
+                      isActive(subitem.href) && 'text-primary bg-gray-50',
+                    ]}
+                  >
+                    {subitem.label}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+        ))
+      }
+      <Button href='/voluntariado'>Voluntariado</Button>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,25 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  backgroundImage: string;
+}
+
+const { title, description, backgroundImage } = Astro.props;
+---
+
+<section 
+  class="relative py-24 bg-cover bg-center bg-no-repeat"
+  style={`background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${backgroundImage})`}
+>
+  <div class="max-w-container mx-auto px-4">
+    <div class="max-w-3xl">
+      <h1 class="text-4xl md:text-5xl font-semibold mb-6 text-white">
+        {title}
+      </h1>
+      <p class="text-gray-100 text-lg font-medium">
+        {description}
+      </p>
+    </div>
+  </div>
+</section>
