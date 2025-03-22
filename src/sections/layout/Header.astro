@@ -32,13 +32,14 @@ const isSubmenuActive = (submenu: Array<{ href: string }>) => {
 };
 ---
 
-<header class='fixed w-full bg-white z-50 flex items-center justify-center px-[5%]'>
-  <div class='w-full max-w-container py-6 flex items-center justify-between'>
-    <a href='/' class='flex items-center'>
-      <img src='/logo-desktop.svg' alt='Logo de Una Gota de Salud' class='h-14 w-auto hover:opacity-70' />
+<header class='w-full bg-white z-50 flex items-center justify-center px-[5%]'>
+  <div class='w-full max-w-container py-5 flex items-center justify-between'>
+    <a href='/' class='flex items-center gap-3'>
+      <img src='/logo-symbol.svg' alt='Símbolo de Una Gota de Salud' class='h-14 w-auto' />
+      <span class='font-semibold text-2xl leading-6 text-balance'>Una Gota de Salud</span>
     </a>
 
-    <nav class='hidden lg:flex items-center gap-6'>
+    <nav class='hidden lg:flex items-center gap-8'>
       {
         navItems.map((item) => (
           <div class='relative group'>
@@ -46,14 +47,15 @@ const isSubmenuActive = (submenu: Array<{ href: string }>) => {
               href={item.href}
               class:list={[
                 'text-gray-700 hover:text-primary transition-colors font-medium flex items-center gap-1',
-                (isActive(item.href) || (item.submenu && isSubmenuActive(item.submenu))) && 'text-primary border-b-2 border-primary',
+                (isActive(item.href) || (item.submenu && isSubmenuActive(item.submenu))) &&
+                  'text-primary border-b-2 border-primary pointer-events-none',
               ]}
             >
               {item.label}
               {item.submenu && <ChevronDown class='w-4 h-4' />}
             </a>
             {item.submenu && (
-              <div class='absolute hidden group-hover:block top-full left-0 bg-white shadow-lg rounded-md py-2 min-w-[12rem]'>
+              <div class='absolute z-50 hidden group-hover:block top-full left-0 bg-white shadow-lg rounded-md py-2 min-w-[12rem]'>
                 {item.submenu.map((subitem) => (
                   <a
                     href={subitem.href}
@@ -70,7 +72,7 @@ const isSubmenuActive = (submenu: Array<{ href: string }>) => {
           </div>
         ))
       }
-      <Button href='/voluntariado'>Voluntariado</Button>
+      <Button href='/voluntariado' class='text-base'>Voluntariado</Button>
     </nav>
   </div>
 </header>
