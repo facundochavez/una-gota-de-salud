@@ -33,20 +33,20 @@ const isSubmenuActive = (submenu: Array<{ href: string }>) => {
 ---
 
 <header class='w-full bg-white z-50 flex items-center justify-center px-[5%]'>
-  <div class='w-full max-w-container py-5 flex items-center justify-between'>
+  <div class='w-full max-w-container py-5 flex items-center gap-8 justify-between'>
     <a href='/' class='flex items-center gap-3'>
-      <img src='/logo-symbol.svg' alt='Símbolo de Una Gota de Salud' class='h-14 w-auto' />
-      <span class='font-semibold text-2xl leading-6 text-balance'>Una Gota de Salud</span>
+      <img src='/logo-symbol.svg' alt='Símbolo de Una Gota de Salud' class='h-12 w-auto' />
+      <span class='font-semibold text-2xl leading-6 text-balance text-gray-600'>Una Gota de Salud</span>
     </a>
 
-    <nav class='hidden lg:flex items-center gap-8'>
+    <nav class='hidden lg:flex items-center gap-7 min-w-max'>
       {
         navItems.map((item) => (
           <div class='relative group'>
             <a
               href={item.href}
               class:list={[
-                'text-gray-700 hover:text-primary transition-colors font-medium flex items-center gap-1',
+                'text-gray-700 hover:text-primary text-lg font-medium flex items-center gap-1',
                 (isActive(item.href) || (item.submenu && isSubmenuActive(item.submenu))) &&
                   'text-primary border-b-2 border-primary pointer-events-none',
               ]}
@@ -60,7 +60,7 @@ const isSubmenuActive = (submenu: Array<{ href: string }>) => {
                   <a
                     href={subitem.href}
                     class:list={[
-                      'block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary font-medium',
+                      'block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary font-medium text-lg',
                       isActive(subitem.href) && 'text-primary bg-gray-50',
                     ]}
                   >
@@ -72,7 +72,7 @@ const isSubmenuActive = (submenu: Array<{ href: string }>) => {
           </div>
         ))
       }
-      <Button href='/voluntariado' class='text-base'>Voluntariado</Button>
+      <Button href='/voluntariado'>Voluntariado</Button>
     </nav>
   </div>
 </header>

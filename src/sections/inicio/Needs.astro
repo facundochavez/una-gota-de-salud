@@ -1,0 +1,29 @@
+---
+import Button from '@/components/Button.astro';
+---
+
+<section class='flex flex-col items-center gap-16 text-center'>
+  <h2 class='text-[2.1rem] leading-[2.1rem] font-medium'>Lo que necesitamos<br />para seguir ayudando</h2>
+
+  <div class='flex flex-col gap-3 text-primary text-3xl leading-[1.7rem] font-medium'>
+    <p>Medicamentos</p>
+    <p>Alimentos no perecederos</p>
+    <p>Productos de higiene personal</p>
+    <p>Productos de limpieza</p>
+    <p>Ropa y calzados</p>
+  </div>
+
+  <div class='h-0.5 w-56 bg-primary -my-8'></div>
+
+  <div class='flex flex-col gap-3 text-primary text-3xl leading-[1.7rem] font-medium'>
+    <p>Vehículos y choferes</p>
+    <p>Profesionales de la salud</p>
+    <p>Estudiantes de salud</p>
+    <p>Voluntarios</p>
+  </div>
+
+  <div class='flex gap-4'>
+    <Button href='/donaciones' variant='secondary'>Quiero donar &nbsp;→</Button>
+    <Button href='/voluntariado'>Quiero ser parte &nbsp;→</Button>
+  </div>
+</section>

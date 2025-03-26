@@ -7,10 +7,10 @@ interface Props {
 
 const { href, variant = 'primary', class: className = '' } = Astro.props;
 
-const baseStyles = 'px-6 py-2 rounded-md transition-colors text-lg font-medium hover:opacity-70 inline-block whitespace-nowrap';
+const baseStyles = ' px-5 py-1.5 rounded-md text-lg font-medium inline-block whitespace-nowrap';
 const variantStyles = {
-  primary: 'bg-primary text-white',
-  secondary: 'border-2 border-primary text-primary',
+  primary: 'bg-primary text-white hover:bg-hover',
+  secondary: 'border-2 border-primary text-primary hover:bg-primary/5 hover:border-hover hover:text-hover',
 };
 ---
 

@@ -4,11 +4,11 @@ export default {
   theme: {
     extend: {
       maxWidth: {
-        container: '75rem',
+        container: '85rem',
       },
       colors: {
         primary: '#00A3FF',
-        secondary: '#0056B3',
+        hover: '#006CD8',
       },
       fontFamily: {
         satoshi: ['Satoshi', 'sans-serif'],

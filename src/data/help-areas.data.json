@@ -1,0 +1,39 @@
+{
+  "areas": [
+    {
+      "id": "clinica",
+      "title": "Clínica",
+      "summary": "Ofrecemos atención médica general para diagnosticar, tratar y hacer seguimiento de enfermedades frecuentes en la región."
+    },
+    {
+      "id": "pediatria",
+      "title": "Pediatría",
+      "summary": "Cuidamos la salud infantil con controles médicos, tratamiento de enfermedades comunes y prevención de la desnutrición."
+    },
+    {
+      "id": "odontologia",
+      "title": "Odontología",
+      "summary": "Proveemos atención odontológica tratando caries, infecciones y otras afecciones bucales, tanto en niños como en adultos."
+    },
+    {
+      "id": "nutricion",
+      "title": "Nutrición",
+      "summary": "Evaluamos el estado nutricional de las personas y brindamos apoyo con alimentos y suplementos para promover una mejor alimentación."
+    },
+    {
+      "id": "farmaceutica",
+      "title": "Farmacéutica",
+      "summary": "Acercamos medicación a quienes la necesitan y asesoramos sobre su administración responsable y efectiva."
+    },
+    {
+      "id": "abrigo-y-calzado",
+      "title": "Abrigo y calzado",
+      "summary": "Recolectamos y entregamos ropa y calzado para ayudar a las familias a sobrellevar el frío y evitar enfermedades."
+    },
+    {
+      "id": "transporte",
+      "title": "Transporte",
+      "summary": "Recorremos cientos de kilómetros para llevar voluntarios, insumos y donaciones a los parajes más remotos."
+    }
+  ]
+}
