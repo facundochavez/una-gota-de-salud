@@ -1,0 +1,40 @@
+---
+const { title, description, image } = Astro.props;
+---
+
+<section id='parallax-section' class='relative h-[30rem] max-h-[50vw] flex flex-col gap-8 items-end justify-center'>
+  <div class='absolute left-1/2 w-screen -translate-x-1/2 z-[-1] inset-0 h-full overflow-hidden'>
+    <img
+      id='parallax-image'
+      src='/media/inicio/cta.webp'
+      alt='Caravana de coches de Una Gota de Salud'
+      class='w-full min-h-[calc(100%+400px)] -mt-[400px] object-cover object-top'
+    />
+    <div class='absolute inset-0 w-full h-full bg-gradient-to-r from-transparent to-black/50'></div>
+    <div class='absolute inset-0 w-full h-full bg-gradient-to-r from-transparent to-black/50'></div>
+
+    <h1 class='text-white text-4xl font-bold'>{title}</h1>
+    <p class='text-white text-lg'>{description}</p>
+  </div>
+</section>
+
+<script>
+  const section = document.getElementById('parallax-section');
+  const image = document.getElementById('parallax-image');
+
+  if (!section || !image) throw new Error('Required elements not found');
+
+  const handleScroll = () => {
+    const sectionRect = section.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+
+    // Calcular el progreso basado en la posición de la sección
+    const scrollProgress = Math.min(1, Math.max(0, (viewportHeight - sectionRect.top) / (viewportHeight + sectionRect.height)));
+
+    // Aplicar la traslación basada en el progreso (0 a 100px)
+    const translation = scrollProgress * 300;
+    image.style.transform = `translateY(${translation}px)`;
+  };
+
+  window.addEventListener('scroll', handleScroll);
+</script>
