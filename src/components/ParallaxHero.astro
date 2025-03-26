@@ -1,21 +1,19 @@
 ---
-const { title, description, image } = Astro.props;
+const { title, description, image, alt, fromOpacity = 0.5, toOpacity = 0 } = Astro.props;
 ---
 
-<section id='parallax-section' class='relative h-[30rem] max-h-[50vw] flex flex-col gap-8 items-end justify-center'>
+<section id='parallax-section' class='relative h-[30rem] max-h-[50vw] flex flex-col gap-8 text-white'>
   <div class='absolute left-1/2 w-screen -translate-x-1/2 z-[-1] inset-0 h-full overflow-hidden'>
-    <img
-      id='parallax-image'
-      src='/media/inicio/cta.webp'
-      alt='Caravana de coches de Una Gota de Salud'
-      class='w-full min-h-[calc(100%+400px)] -mt-[400px] object-cover object-top'
-    />
-    <div class='absolute inset-0 w-full h-full bg-gradient-to-r from-transparent to-black/50'></div>
-    <div class='absolute inset-0 w-full h-full bg-gradient-to-r from-transparent to-black/50'></div>
-
-    <h1 class='text-white text-4xl font-bold'>{title}</h1>
-    <p class='text-white text-lg'>{description}</p>
+    <img id='parallax-image' src={image} alt={alt} class='w-full min-h-[calc(100%+100px)] object-cover -mt-[100px]' />
+    <div
+      class='absolute inset-0 w-full h-full bg-gradient-to-r from-black/[var(--from-opacity)] to-black/[var(--to-opacity)]'
+      style={`--from-opacity: ${fromOpacity}; --to-opacity: ${toOpacity}`}
+    >
+    </div>
   </div>
+
+  <h1 class='text-[2.5rem] leading-[2.5rem] font-medium'>{title}</h1>
+  <p class='text-2xl max-w-[35ch] text-balance'>{description}</p>
 </section>
 
 <script>
@@ -24,16 +22,21 @@ const { title, description, image } = Astro.props;
 
   if (!section || !image) throw new Error('Required elements not found');
 
+  // Obtener la distancia inicial entre el borde inferior de la sección y el viewport
+  const sectionRect = section.getBoundingClientRect();
+  const initialDistance = sectionRect.bottom;
+
   const handleScroll = () => {
-    const sectionRect = section.getBoundingClientRect();
-    const viewportHeight = window.innerHeight;
+    const currentRect = section.getBoundingClientRect();
 
-    // Calcular el progreso basado en la posición de la sección
-    const scrollProgress = Math.min(1, Math.max(0, (viewportHeight - sectionRect.top) / (viewportHeight + sectionRect.height)));
+    // Calcular el progreso basado en la distancia recorrida
+    const scrollProgress = Math.min(1, Math.max(0, (initialDistance - currentRect.bottom) / initialDistance));
 
-    // Aplicar la traslación basada en el progreso (0 a 100px)
-    const translation = scrollProgress * 300;
+    // Aplicar la traslación basada en el progreso
+    const translation = scrollProgress * 200;
     image.style.transform = `translateY(${translation}px)`;
+
+    console.log(initialDistance, currentRect.bottom);
   };
 
   window.addEventListener('scroll', handleScroll);
