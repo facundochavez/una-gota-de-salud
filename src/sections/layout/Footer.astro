@@ -1,0 +1,88 @@
+---
+const links = [
+  { label: 'Inicio', href: '/' },
+  { label: 'Quiénes somos', href: '/quienes-somos' },
+  { label: 'Qué hacemos', href: '/lo-que-hacemos' },
+  { label: 'Formas de ayudar', href: '/formas-de-ayudar' },
+  { label: 'Galería', href: '/galeria' },
+  { label: 'Contacto', href: '/contacto' },
+];
+
+const socialLinks = {
+  facebook: 'https://facebook.com/unagotadesalud',
+  instagram: 'https://instagram.com/unagotadesalud',
+  whatsapp: 'https://wa.me/543515917215',
+};
+
+const credits = {
+  fotografia: {
+    name: 'Analía Villagra',
+    href: 'https://instagram.com/analiavillagra',
+  },
+  web: {
+    name: 'Facundo Chavez',
+    href: 'https://github.com/facundochavez',
+  },
+};
+---
+
+<footer class='bg-primary text-white'>
+  <div class='container mx-auto py-16 flex flex-col gap-16'>
+    <div class='flex flex-col md:flex-row gap-16 md:gap-32'>
+      <div class='flex flex-col gap-8'>
+        <img src='/logo-white.svg' alt='Una Gota de Salud' class='h-16 w-auto' />
+        <p class='max-w-[40ch] text-sm opacity-80'>
+          Una Gota de Salud es una organización no gubernamental sin fines de lucro, destinada a brindar asistencia sanitaria en parajes inhóspitos
+          del noroeste de Córdoba.
+        </p>
+        <p class='text-sm opacity-80'>PERSONERÍA JURÍDICA Nº 456/65556554</p>
+      </div>
+
+      <nav class='flex flex-col gap-4'>
+        {
+          links.map((link) => (
+            <a href={link.href} class='hover:underline'>
+              {link.label}
+            </a>
+          ))
+        }
+      </nav>
+
+      <div class='flex flex-col gap-4'>
+        <a href='/voluntariado' class='text-white hover:underline'>Voluntariado &nbsp;→</a>
+        <p>Santa Rosa 1803, Córdoba Capital</p>
+        <p>+54 351 591 7215</p>
+        <a href='mailto:unagotadesalud@gmail.com' class='hover:underline'>unagotadesalud@gmail.com</a>
+        <div class='flex gap-4 mt-2'>
+          <a href={socialLinks.facebook} target='_blank' rel='noopener noreferrer' class='hover:opacity-80'>
+            <img src='/icons/facebook.svg' alt='Facebook' class='w-6 h-6' />
+          </a>
+          <a href={socialLinks.instagram} target='_blank' rel='noopener noreferrer' class='hover:opacity-80'>
+            <img src='/icons/instagram.svg' alt='Instagram' class='w-6 h-6' />
+          </a>
+          <a href={socialLinks.whatsapp} target='_blank' rel='noopener noreferrer' class='hover:opacity-80'>
+            <img src='/icons/whatsapp.svg' alt='WhatsApp' class='w-6 h-6' />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class='flex flex-col gap-2 text-sm opacity-80 border-t border-white/20 pt-8'>
+      <p>© 2024 Una Gota de Salud. Todos los derechos reservados</p>
+      <p>
+        Fotografía por <a href={credits.fotografia.href} target='_blank' rel='noopener noreferrer' class='hover:underline'
+          >{credits.fotografia.name}</a
+        > | Web sin fines de lucro por <a href={credits.web.href} target='_blank' rel='noopener noreferrer' class='hover:underline'
+          >{credits.web.name}</a
+        >
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .container {
+    @apply max-w-container;
+  }
+</style>
+

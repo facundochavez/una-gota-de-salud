@@ -1,5 +1,6 @@
 ---
 import Header from '@/sections/layout/Header.astro';
+import Footer from '@/sections/layout/Footer.astro';
 
 interface Props {
   title: string;
@@ -23,6 +24,7 @@ const { title } = Astro.props;
     <main class='w-full overflow-clip inline-flex flex-col items-center px-[5%] [&>section]:w-full [&>section]:max-w-container [&>section]:py-32'>
       <slot />
     </main>
+    <Footer />
   </body>
 </html>
 
