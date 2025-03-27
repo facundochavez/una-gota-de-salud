@@ -59,8 +59,8 @@ const isSubmenuActive = (submenu: Array<{ href: string }>) => {
                   <a
                     href={subitem.href}
                     class:list={[
-                      'block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary font-medium text-lg',
-                      isActive(subitem.href) && 'text-primary bg-gray-50',
+                      'block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary font-medium text-lg',
+                      isActive(subitem.href) && 'text-primary pointer-events-none',
                     ]}
                   >
                     {subitem.label}

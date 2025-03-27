@@ -24,7 +24,7 @@ const { title, description, image, alt, fromOpacity = 0.5, toOpacity = 0 } = Ast
 
   // Obtener la distancia inicial entre el borde inferior de la sección y el viewport
   const sectionRect = section.getBoundingClientRect();
-  const initialDistance = sectionRect.bottom;
+  const initialDistance = sectionRect.height + 6 * 16;
 
   const handleScroll = () => {
     const currentRect = section.getBoundingClientRect();
