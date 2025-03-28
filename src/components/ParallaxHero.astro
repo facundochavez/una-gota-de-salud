@@ -6,14 +6,14 @@ const { title, description, image, alt, fromOpacity = 0.5, toOpacity = 0 } = Ast
   <div class='absolute left-1/2 w-screen -translate-x-1/2 z-[-1] inset-0 h-full overflow-hidden'>
     <img id='parallax-image' src={image} alt={alt} class='w-full min-h-[calc(100%+100px)] object-cover -mt-[100px]' />
     <div
-      class='absolute inset-0 w-full h-full bg-gradient-to-r from-black/[var(--from-opacity)] to-black/[var(--to-opacity)]'
-      style={`--from-opacity: ${fromOpacity}; --to-opacity: ${toOpacity}`}
+      class='absolute inset-0 w-full h-full'
+      style={`background: linear-gradient(to right, rgba(0,0,0,${fromOpacity}) 30%, rgba(0,0,0,${toOpacity}) 100%)`}
     >
     </div>
   </div>
 
   <h1 class='text-[2.5rem] leading-[2.5rem] font-medium'>{title}</h1>
-  <p class='text-2xl max-w-[30ch] text-balance'>{description}</p>
+  <p class='text-[1.65rem] leading-[2rem] max-w-[30ch] text-balance'>{description}</p>
 </section>
 
 <script>
