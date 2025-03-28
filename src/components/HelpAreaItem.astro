@@ -1,0 +1,17 @@
+---
+const { id, title, firstParagraph, secondParagraph, firstImageWidth, firstImageAlt, secondImageAlt } = Astro.props;
+---
+
+<div id={id} class='flex flex-col gap-6 [&>p]:text-xl [&>p]:font-medium pt-12 pb-4'>
+  <h2 class='text-[2.5rem] font-medium'>{title}</h2>
+  <p>{firstParagraph}</p>
+  <p>{secondParagraph}</p>
+  <div class='flex gap-8 h-[28rem] w-full mt-8'>
+    <div style={`width: ${firstImageWidth}`} class='relative h-full rounded-xl overflow-hidden'>
+      <img src={`/media/que-hacemos/${id}-1.png`} alt={firstImageAlt} class='w-full h-full object-cover' />
+    </div>
+    <div class='relative h-full flex-1 rounded-xl overflow-hidden'>
+      <img src={`/media/que-hacemos/${id}-2.png`} alt={secondImageAlt} class='w-full h-full object-cover' />
+    </div>
+  </div>
+</div>

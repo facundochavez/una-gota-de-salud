@@ -1,0 +1,30 @@
+---
+import Button from '@/components/Button.astro';
+import ParallaxFooter from '@/components/ParallaxFooter.astro';
+import ParallaxHero from '@/components/ParallaxHero.astro';
+import Layout from '@/layouts/Layout.astro';
+import DonationList from '@/components/DonationList.astro';
+import CTAs from '@/components/CTAs.astro';
+---
+
+<Layout title='Una Gota de Salud | Donaciones'>
+  <ParallaxHero
+    title='Donaciones'
+    description='Recibimos medicamentos, alimentos no perecederos, ropa y productos de limpieza e higiene personal.'
+    image='/media/donaciones/hero.png'
+    alt='Módulos alimentarios de Una Gota de Salud'
+  />
+  <section class='flex flex-col gap-12'>
+    <h2 class='text-[2.5rem] font-medium text-center'>Lista de necesidades</h2>
+    <DonationList />
+  </section>
+  <CTAs
+    title='No necesitás ser un profesional de la salud para ayudar'
+    firstButtonHref='/formas-de-ayudar'
+    firstButtonLabel='Formas de ayudar  →'
+    secondButtonHref='/voluntariado'
+    secondButtonLabel='Ser voluntario/a  →'
+    maxChars={30}
+  />
+  <ParallaxFooter imageSrc='/media/donaciones/footer.png' alt='Grupo de voluntarios de Una Gota de Salud' />
+</Layout>

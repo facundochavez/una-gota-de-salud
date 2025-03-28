@@ -3,37 +3,71 @@
     {
       "id": "clinica",
       "title": "Clínica",
-      "summary": "Ofrecemos atención médica general para diagnosticar, tratar y hacer seguimiento de enfermedades frecuentes en la región."
+      "summary": "Ofrecemos atención médica general para diagnosticar, tratar y hacer seguimiento de enfermedades frecuentes en la región.",
+      "firstParagraph": "El área clínica se encarga de ofrecer atención médica integral a las familias, realizando controles generales de salud, detección de enfermedades crónicas y urgentes, prescripción de medicamentos y seguimiento de patologías prevalentes en la región, como hipertensión, diabetes, y problemas digestivos, muy vinculados a la falta de acceso a alimentos adecuados y agua potable.",
+      "secondParagraph": "Los médicos también educan a la población sobre salud reproductiva y distribuyen anticonceptivos y preservativos. Gracias al apoyo de los voluntarios y profesionales de salud, se trata que los pacientes reciban atención continua y seguimiento para evitar complicaciones graves, siempre dentro de los recursos limitados disponibles en estas localidades.",
+      "firstImageAlt": "Médicas atendiendo a mujer.",
+      "secondImageAlt": "Médico examinando manos de anciana.",
+      "firstImageWidth": "55%"
     },
     {
       "id": "pediatria",
       "title": "Pediatría",
-      "summary": "Cuidamos la salud infantil con controles médicos, tratamiento de enfermedades comunes y prevención de la desnutrición."
+      "summary": "Cuidamos la salud infantil con controles médicos, tratamiento de enfermedades comunes y prevención de la desnutrición.",
+      "firstParagraph": "El área de pediatría se enfoca en la atención integral de los niños, particularmente en el diagnóstico y tratamiento de la desnutrición infantil. Los médicos realizan un control exhaustivo de los menores en conjunto con los nutricionistas, lo que les permite identificar a los niños en situación de desnutrición y determinar el grado de la misma. A partir de este diagnóstico, se les brindan los suplementos alimenticios y vitaminas disponibles para mejorar su salud y detener el círculo vicioso de la desnutrición, que afecta tanto a los niños como a sus madres.",
+      "secondParagraph": "Dado lo delicado de tratar a los más pequeños, son los médicos con mayor experiencia los que se encargan de esta área, ya que la medicación y el seguimiento de los niños requiere especial cuidado. El equipo médico toma decisiones precisas sobre qué tipo de alimentos y tratamientos proporcionar, siempre priorizando la seguridad y el bienestar de los niños.",
+      "firstImageAlt": "Pediatra mujer abrazando y dando un beso a un niño.",
+      "secondImageAlt": "Pediatra mujer sosteniendo a una bebita.",
+      "firstImageWidth": "45%"
     },
     {
       "id": "odontologia",
       "title": "Odontología",
-      "summary": "Proveemos atención odontológica tratando caries, infecciones y otras afecciones bucales, tanto en niños como en adultos."
+      "summary": "Proveemos atención odontológica tratando caries, infecciones y otras afecciones bucales, tanto en niños como en adultos.",
+      "firstParagraph": "El área de odontología se dedica a brindar atención bucal a las familias de los parajes, donde las carencias vitamínicas y de calcio suelen derivar en graves problemas dentales. Los odontólogos realizan extracciones de piezas dañadas y reparaciones de caries en casos menos complicados. Además, se encargan de realizar aplicaciones de flúor para prevenir nuevas caries y enseñan a los niños la importancia del cepillado adecuado. La prevención es clave, ya que la salud bucal está estrechamente relacionada con la nutrición y las condiciones de vida en estos lugares.",
+      "secondParagraph": "El tratamiento odontológico en estos parajes tiene ciertas limitaciones, ya que no se pueden realizar procedimientos quirúrgicos complejos debido a la lejanía de los mismos y los riesgos asociados. Los odontólogos, además de tratar a los pacientes, reparten cepillos y pasta de dientes, y llevan materiales educativos, como modelos de dentaduras e imágenes, para sensibilizar sobre el cuidado dental. La función preventiva es fundamental, y los odontólogos educan a los niños desde pequeños para que adopten hábitos de higiene oral que les permitan evitar futuros problemas, incluso cuando no hay pasta dental disponible.",
+      "firstImageAlt": "Odontóloga mirando a niño con cepillo de dientes.",
+      "secondImageAlt": "Odontóloga tratando a mujer.",
+      "firstImageWidth": "60%"
     },
     {
       "id": "nutricion",
       "title": "Nutrición",
-      "summary": "Evaluamos el estado nutricional de las personas y brindamos apoyo con alimentos y suplementos para promover una mejor alimentación."
+      "summary": "Evaluamos el estado nutricional de las personas y brindamos apoyo con alimentos y suplementos para promover una mejor alimentación.",
+      "firstParagraph": "El área de nutrición trabaja en conjunto con los médicos para diagnosticar el estado de salud y nutrición de las personas en los parajes. A través de mediciones de peso, talla e índice de masa corporal (IMC), los nutricionistas identifican casos de sobrepeso, desnutrición y el grado de desnutrición en los pacientes. Esta información es clave para determinar el tipo de intervención nutricional necesaria.",
+      "secondParagraph": "La labor de los nutricionistas se complementa con los módulos alimentarios que se entregan a las familias, los cuales buscan diversificar la alimentación y aportar nutrientes esenciales que suelen faltar en su dieta habitual. Cuando se detectan carencias específicas, se hace lo posible por asignar suplementos nutricionales como hierro, calcio o vitaminas. De esta manera, la atención nutricional no solo busca mejorar la alimentación diaria, sino también corregir deficiencias que afectan el desarrollo y la salud a largo plazo.",
+      "firstImageAlt": "Nutricionistas revisando planillas de pacientes.",
+      "secondImageAlt": "Cajas de alimentos donados.",
+      "firstImageWidth": "47%"
     },
     {
       "id": "farmaceutica",
       "title": "Farmacéutica",
-      "summary": "Acercamos medicación a quienes la necesitan y asesoramos sobre su administración responsable y efectiva."
+      "summary": "Acercamos medicación a quienes la necesitan y asesoramos sobre su administración responsable y efectiva.",
+      "firstParagraph": "El área farmacéutica se encarga de la gestión y distribución de los medicamentos necesarios para tratar las afecciones más comunes en los parajes. Los farmacéuticos trabajan en conjunto con los médicos y odontólogos para que cada paciente reciba el tratamiento adecuado según su diagnóstico, asegurando el correcto uso de los fármacos y brindando información sobre su administración. Además, llevan un control riguroso del stock de medicamentos, priorizando aquellos de mayor demanda, como antibióticos, analgésicos y antiparasitarios.",
+      "secondParagraph": "Para abastecer a la mayor cantidad de pacientes posible, los farmacéuticos gestionan donaciones tanto de particulares como de empresas que aportan muestras gratuitas. A pesar de los esfuerzos, la disponibilidad de ciertos medicamentos es limitada, por lo que buscan la forma de que cada persona reciba la mejor alternativa posible y las indicaciones necesarias para continuar su recuperación con la menor de las interrupciones.",
+      "firstImageAlt": "Farmacéuticos gestionando medicamentos.",
+      "secondImageAlt": "Farmacéuticas gestionando medicamentos.",
+      "firstImageWidth": "56%"
     },
     {
       "id": "abrigo-y-calzado",
       "title": "Abrigo y calzado",
-      "summary": "Recolectamos y entregamos ropa y calzado para ayudar a las familias a sobrellevar el frío y evitar enfermedades."
+      "summary": "Recolectamos y entregamos ropa y calzado para ayudar a las familias a sobrellevar el frío y evitar enfermedades.",
+      "firstParagraph": "Si bien no se trata de la función principal de La Gota, la entrega de abrigo y calzado es un anexo fundamental de la ayuda proporcionada. Muchas familias enfrentan inviernos crudos con ropa insuficiente y calzado deteriorado, lo que agrava su vulnerabilidad ante enfermedades respiratorias y otras complicaciones. Por ello, se realizan campañas de recolección de donaciones para proveer a niños y adultos de prendas adecuadas, priorizando frazadas, camperas y calzado en buen estado.",
+      "secondParagraph": "Antes de ser entregadas, todas las prendas y calzados pasan por un proceso de acondicionamiento. Se lavan cuidadosamente y se revisan para detectar posibles daños. Si una prenda tiene un cierre roto o un botón faltante, se repara antes de ser donada, asegurando que llegue en condiciones óptimas a los parajes. Este trabajo, aunque muchas veces invisible, marca la diferencia en la calidad de la ayuda brindada.",
+      "firstImageAlt": "Pies de niño con zapatillas rotas.",
+      "secondImageAlt": "Voluntaria probando un calzado nuevo a niño.",
+      "firstImageWidth": "45%"
     },
     {
       "id": "transporte",
       "title": "Transporte",
-      "summary": "Recorremos cientos de kilómetros para llevar voluntarios, insumos y donaciones a los parajes más remotos."
+      "summary": "Recorremos cientos de kilómetros para llevar voluntarios, insumos y donaciones a los parajes más remotos.",
+      "firstParagraph": "Cada operativo requiere trasladar personal, donaciones y equipamiento desde la capital provincial hasta los parajes. Los choferes son personas invaluables que recorren más de 150 kilómetros, muchas veces por caminos difíciles y poco transitados, para que La Gota pueda brindar su asistencia a las familias.",
+      "secondParagraph": "Estos voluntarios no solo conducen largas distancias, sino que también colaboran activamente en la carga y descarga de insumos y donaciones, ayudando a acomodar camillas y otros elementos esenciales al llegar a destino. Su compromiso hace que cada operativo sea más ordenado y efectivo, permitiendo que la ayuda llegue a la mayor cantidad de familias posible.",
+      "secondImageAlt": "Vehículo de Una Gota de Salud yendo a un paraje.",
+      "firstImageWidth": "60%"
     }
   ]
 }

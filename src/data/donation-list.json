@@ -1,0 +1,73 @@
+{
+  "alimentos": {
+    "title": "Alimentos no perecederos",
+    "items": [
+      "Leche en polvo",
+      "Leche larga vida",
+      "Leche maternizada",
+      "Nestúm",
+      "Nutrilón",
+      "Harina",
+      "Vitina",
+      "Avena",
+      "Aceite",
+      "Fideos",
+      "Arroz",
+      "Polenta",
+      "Puré de tomate",
+      "Azúcar",
+      "Yerba",
+      "Té y mate cocido",
+      "Arvejas",
+      "Jardinera",
+      "Lentejas en bolsita",
+      "Jurel",
+      "Atún",
+      "Cavalla",
+      "Choclo en lata"
+    ]
+  },
+  "medicamentos": {
+    "title": "Medicamentos",
+    "items": [
+      "Enalapril / comp. 10 y 20 mg",
+      "Ibuprofeno / comp. y jarabe",
+      "Paracetamol / comp. y jarabe",
+      "Ranitidina / comp. 150 y 300 mg",
+      "Omeprazol / cápsulas",
+      "Betametasona / gotas",
+      "Amoxicilina / comp. 500 mg y jarabe",
+      "Salbutamol / aerosol con aerocámara",
+      "Diclofenac",
+      "Omeprasol",
+      "Cetizina",
+      "Salbutamol",
+      "Atorvastatina",
+      "Simeticona",
+      "Merformina",
+      "Pomada para paspaduras",
+      "Antiparasitarios",
+      "Anticonceptivos",
+      "Preservativos"
+    ]
+  },
+  "higiene": {
+    "title": "Productos de limpieza e higiene personal",
+    "items": [
+      "Cepillo dental",
+      "Pasta de dientes",
+      "Shampoo",
+      "Perfumina",
+      "Jabón de tocador",
+      "Jabón blanco",
+      "Detergente",
+      "Lavandina",
+      "Pañales talle P, M, G, XG y XXG",
+      "Toalllitas femeninas"
+    ]
+  },
+  "abrigo": {
+    "title": "Abrigo y calzado (no recibimos rotos ni en mal estado)",
+    "items": ["Remeras", "Camperas", "Pantalones", "Zapatillas", "Frazadas"]
+  }
+}

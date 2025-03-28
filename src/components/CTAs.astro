@@ -1,0 +1,16 @@
+---
+import Button from '@/components/Button.astro';
+const { title, firstButtonHref, firstButtonLabel, secondButtonHref, secondButtonLabel, maxChars = 20, pt = 32, pb = 32 } = Astro.props;
+---
+
+<section class=`flex flex-col items-center !pt-${pt} !pb-${pb}`>
+  <div class='flex flex-col items-center gap-10'>
+    <h2 class={`text-[2.5rem] leading-[2.5rem] text-center font-medium text-balance`} style={`max-width: ${maxChars}ch`}>
+      {title}
+    </h2>
+    <div class='flex gap-4'>
+      <Button href={firstButtonHref} variant='secondary'>{firstButtonLabel}</Button>
+      <Button href={secondButtonHref}>{secondButtonLabel}</Button>
+    </div>
+  </div>
+</section>

@@ -2,9 +2,11 @@
 import Layout from '@/layouts/Layout.astro';
 import ParallaxHero from '@/components/ParallaxHero.astro';
 import LaGotaStory from '@/sections/quienes-somos/LaGotaStory.astro';
+import ParallaxFooter from '@/components/ParallaxFooter.astro';
+import Button from '@/components/Button.astro';
 ---
 
-<Layout title='Una Gota de Salud - Quienes somos'>
+<Layout title='Una Gota de Salud | Quiénes somos'>
   <ParallaxHero
     title='Quiénes somos'
     description='La Gota lleva más de quince años ayudando a mejorar la salud de personas en situación de vulnerabilidad en parajes remotos del noroeste de Córdoba.'
@@ -12,4 +14,14 @@ import LaGotaStory from '@/sections/quienes-somos/LaGotaStory.astro';
     alt='Médica atendiendo a paciente en rancho'
   />
   <LaGotaStory />
+
+  <ParallaxFooter
+    imageSrc='/media/quienes-somos/footer.png'
+    alt='Paisaje de la provincia de Córdoba al atardecer'
+    title='No necesitás ser un profesional de la salud para ayudar'
+    firstButtonHref='/formas-de-ayudar'
+    secondButtonHref='/voluntariado'
+    firstButtonLabel='Formas de ayudar  →'
+    secondButtonLabel='Ser voluntario/a  →'
+  />
 </Layout>

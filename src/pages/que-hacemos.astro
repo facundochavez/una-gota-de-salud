@@ -1,0 +1,30 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import ParallaxHero from '@/components/ParallaxHero.astro';
+import helpAreasData from '@/data/help-areas.data.json';
+import HelpAreaItem from '@/components/HelpAreaItem.astro';
+import ParallaxFooter from '@/components/ParallaxFooter.astro';
+---
+
+<Layout title='Una Gota de Salud | Qué hacemos'>
+  <ParallaxHero
+    title='Qué hacemos'
+    description='Asistencia médica, odontológica y nutricional para quienes no tienen la oportunidad de atenderse en un centro médico.'
+    image='/media/que-hacemos/hero.png'
+    alt='Farmacéuticas gestionando medicamentos'
+    fromOpacity={0.7}
+  />
+  <section class='!pt-20'>
+    {helpAreasData.areas.map((area) => <HelpAreaItem key={area.id} {...area} />)}
+  </section>
+  <ParallaxFooter
+    imageSrc='/media/que-hacemos/footer.png'
+    alt='Vehículo de Una Gota de Salud yendo a un paraje'
+    title='No necesitás ser un profesional de la salud para ayudar'
+    firstButtonHref='/formas-de-ayudar'
+    secondButtonHref='/voluntariado'
+    firstButtonLabel='Formas de ayudar  →'
+    secondButtonLabel='Ser voluntario/a  →'
+    align='left'
+  />
+</Layout>
