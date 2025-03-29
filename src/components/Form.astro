@@ -1,0 +1,199 @@
+---
+interface Props {
+  isDonation?: boolean;
+  isVolunteer?: boolean;
+}
+
+const { isDonation = false, isVolunteer = false } = Astro.props;
+---
+
+<form id='contact-form' class='max-w-2xl mx-auto p-8 bg-white rounded-xl shadow-lg'>
+  <div class='space-y-6'>
+    <div id='user-wish-section' class={!isDonation && !isVolunteer ? '' : 'hidden'}>
+      <label for='user_wish' class='block text-sm font-medium text-gray-700 mb-2'> ¿Qué te gustaría hacer? </label>
+      <select
+        id='user_wish'
+        name='user_wish'
+        required
+        class='w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
+      >
+        <option value=''>Selecciona una opción</option>
+        <option value='Hacer una donación'>Hacer una donación</option>
+        <option value='Ser voluntario/a'>Ser voluntario/a</option>
+        <option value='Otra consulta'>Otra consulta</option>
+      </select>
+    </div>
+
+    <div id='donation-section' class={isDonation ? '' : 'hidden'}>
+      <label class='block text-sm font-medium text-gray-700 mb-2'>¿Qué tipo de donación te gustaría realizar?</label>
+      <div class='space-y-2'>
+        <label class='flex items-center'>
+          <input type='checkbox' name='user_donation' value='Dinero' class='rounded border-gray-300 text-blue-600 focus:ring-blue-500' />
+          <span class='ml-2'>Dinero</span>
+        </label>
+        <label class='flex items-center'>
+          <input type='checkbox' name='user_donation' value='Medicamentos' class='rounded border-gray-300 text-blue-600 focus:ring-blue-500' />
+          <span class='ml-2'>Medicamentos</span>
+        </label>
+        <label class='flex items-center'>
+          <input type='checkbox' name='user_donation' value='Material médico' class='rounded border-gray-300 text-blue-600 focus:ring-blue-500' />
+          <span class='ml-2'>Material médico</span>
+        </label>
+        <label class='flex items-center'>
+          <input type='checkbox' name='user_donation' value='Otro' class='rounded border-gray-300 text-blue-600 focus:ring-blue-500' />
+          <span class='ml-2'>Otro</span>
+        </label>
+      </div>
+    </div>
+
+    <div id='user-is-section' class={!isDonation && !isVolunteer ? '' : 'hidden'}>
+      <label for='user_is' class='block text-sm font-medium text-gray-700 mb-2'> ¿Quién eres? </label>
+      <select
+        id='user_is'
+        name='user_is'
+        required
+        class='w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
+      >
+        <option value=''>Selecciona una opción</option>
+        <option value='Profesional de la salud'>Profesional de la salud</option>
+        <option value='Estudiante en el área de la salud'>Estudiante en el área de la salud</option>
+        <option value='Otro'>Otro</option>
+      </select>
+    </div>
+
+    <div id='user-area-section' class='hidden'>
+      <label for='user_area' class='block text-sm font-medium text-gray-700 mb-2'> ¿En qué área te especializas? </label>
+      <select
+        id='user_area'
+        name='user_area'
+        required
+        class='w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
+      >
+        <option value=''>Selecciona una opción</option>
+        <option value='Medicina general'>Medicina general</option>
+        <option value='Enfermería'>Enfermería</option>
+        <option value='Odontología'>Odontología</option>
+        <option value='Psicología'>Psicología</option>
+        <option value='Otro'>Otro</option>
+      </select>
+    </div>
+
+    <div>
+      <label for='name' class='block text-sm font-medium text-gray-700 mb-2'> Nombre </label>
+      <input
+        type='text'
+        id='name'
+        name='name'
+        required
+        class='w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
+      />
+    </div>
+
+    <div>
+      <label for='email' class='block text-sm font-medium text-gray-700 mb-2'> Email </label>
+      <input
+        type='email'
+        id='email'
+        name='email'
+        required
+        class='w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
+      />
+    </div>
+
+    <div>
+      <label for='phone' class='block text-sm font-medium text-gray-700 mb-2'> Teléfono </label>
+      <input
+        type='tel'
+        id='phone'
+        name='phone'
+        required
+        class='w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
+      />
+    </div>
+
+    <div>
+      <label for='message' class='block text-sm font-medium text-gray-700 mb-2'> Mensaje </label>
+      <textarea
+        id='message'
+        name='message'
+        rows='4'
+        class='w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500'></textarea>
+    </div>
+
+    <button
+      type='submit'
+      class='w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2'
+    >
+      Enviar
+    </button>
+  </div>
+</form>
+
+<script>
+  // Cargar EmailJS desde CDN
+  const script = document.createElement('script');
+  script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
+  script.async = true;
+  document.head.appendChild(script);
+
+  script.onload = () => {
+    // @ts-ignore
+    emailjs.init('-CnEHK3O5IogwMNGA');
+  };
+
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const userWishSelect = document.getElementById('user_wish') as HTMLSelectElement;
+  const userIsSelect = document.getElementById('user_is') as HTMLSelectElement;
+  const userWishSection = document.getElementById('user-wish-section');
+  const donationSection = document.getElementById('donation-section');
+  const userIsSection = document.getElementById('user-is-section');
+  const userAreaSection = document.getElementById('user-area-section');
+
+  // Manejar cambios en los selects para mostrar/ocultar campos
+  if (userWishSelect) {
+    userWishSelect.addEventListener('change', () => {
+      if (userWishSelect.value === 'Hacer una donación') {
+        donationSection?.classList.remove('hidden');
+        userIsSection?.classList.add('hidden');
+        userAreaSection?.classList.add('hidden');
+      } else if (userWishSelect.value !== 'Hacer una donación') {
+        donationSection?.classList.add('hidden');
+        userIsSection?.classList.remove('hidden');
+      }
+    });
+  }
+
+  if (userIsSelect) {
+    userIsSelect.addEventListener('change', () => {
+      if (userIsSelect.value === 'Profesional de la salud' || userIsSelect.value === 'Estudiante en el área de la salud') {
+        userAreaSection?.classList.remove('hidden');
+      } else {
+        userAreaSection?.classList.add('hidden');
+      }
+    });
+  }
+
+  // Manejar envío del formulario
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    try {
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      // Procesar checkboxes de donación
+      if (data.user_donation) {
+        data.user_donation = Array.isArray(data.user_donation) ? data.user_donation.join(', ') : data.user_donation;
+      }
+
+      // @ts-ignore
+      await emailjs.send('template_vfj4kg2', data);
+
+      alert('¡Mensaje enviado con éxito!');
+      form.reset();
+    } catch (error) {
+      console.error('Error al enviar el formulario:', error);
+      alert('Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.');
+    }
+  });
+</script>

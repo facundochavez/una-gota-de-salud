@@ -2,18 +2,20 @@
 import Layout from '@/layouts/Layout.astro';
 import ParallaxFooter from '@/components/ParallaxFooter.astro';
 import CTAs from '@/components/CTAs.astro';
+import Form from '@/components/Form.astro';
 ---
 
 <Layout title='Una Gota de Salud | Contacto'>
   <section class='h-screen'>
     <h1>Contacto</h1>
   </section>
+  <Form />
   <CTAs
     title='Cada acción cuenta. Ayudanos a ayudar.'
     firstButtonHref='/formas-de-ayudar'
-    firstButtonLabel='Formas de ayudar  →'
+    firstButtonLabel='Formas de ayudar  →'
     secondButtonHref='/voluntariado'
-    secondButtonLabel='Ser voluntario/a  →'
+    secondButtonLabel='Ser voluntario/a  →'
   />
   <ParallaxFooter imageSrc='/media/contacto/footer.png' alt='Grupo de voluntarios de Una Gota de Salud' />
 </Layout>
