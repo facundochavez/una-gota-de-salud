@@ -2,7 +2,7 @@
 const { title, description, image, alt, fromOpacity = 0.5, toOpacity = 0 } = Astro.props;
 ---
 
-<section id='parallax-section' class='relative h-[30rem] max-h-[50vw] flex flex-col gap-8 text-white'>
+<section id='parallax-section' class='relative h-[30rem] max-h-[50vw] flex flex-col gap-10 text-white'>
   <div class='absolute left-1/2 w-screen -translate-x-1/2 z-[-1] inset-0 h-full overflow-hidden'>
     <img id='parallax-image' src={image} alt={alt} class='w-full min-h-[calc(100%+100px)] object-cover -mt-[100px]' />
     <div

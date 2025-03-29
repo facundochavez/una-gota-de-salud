@@ -2,7 +2,7 @@
 const { id, title, firstParagraph, secondParagraph, firstImageWidth, firstImageAlt, secondImageAlt } = Astro.props;
 ---
 
-<div id={id} class='flex flex-col gap-6 [&>p]:text-xl [&>p]:font-medium pt-12 pb-4'>
+<div id={id} class='flex flex-col gap-6 [&>p]:text-xl pt-12 pb-4'>
   <h2 class='text-[2.5rem] font-medium'>{title}</h2>
   <p>{firstParagraph}</p>
   <p>{secondParagraph}</p>

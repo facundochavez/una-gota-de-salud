@@ -12,6 +12,7 @@ export default {
       },
       fontFamily: {
         satoshi: ['Satoshi', 'sans-serif'],
+        'space-grotesk': ['Space Grotesk', 'sans-serif'],
       },
     },
   },

@@ -3,6 +3,7 @@ import Layout from '@/layouts/Layout.astro';
 import Hero from '@/sections/inicio/Hero.astro';
 import About from '@/sections/inicio/About.astro';
 import Statistics from '@/sections/inicio/Statistics.astro';
+import Videos from '@/sections/inicio/Videos.astro';
 import HelpAreasCarousel from '@/sections/inicio/HelpAreasCarousel.astro';
 import Map from '@/sections/inicio/Map.astro';
 import Needs from '@/sections/inicio/Needs.astro';
@@ -16,6 +17,7 @@ import ParallaxFooter from '@/components/ParallaxFooter.astro';
   <Hero />
   <About />
   <Statistics />
+  <Videos />
   <HelpAreasCarousel />
   <Map />
   <Needs />
@@ -24,19 +26,11 @@ import ParallaxFooter from '@/components/ParallaxFooter.astro';
   <CTAs
     title='Cada acción cuenta. Ayudanos a ayudar.'
     firstButtonHref='/formas-de-ayudar'
-    firstButtonLabel='Formas de ayudar  →'
+    firstButtonLabel='Formas de ayudar  →'
     secondButtonHref='/voluntariado'
-    secondButtonLabel='Ser voluntario/a  →'
+    secondButtonLabel='Ser voluntario/a  →'
     pt={8}
     pb={40}
   />
-  <ParallaxFooter
-    imageSrc='/media/inicio/footer.webp'
-    alt='Caravana de autos de Una Gota de Salud'
-    title='Llevamos esperanza\n\nen cada viaje'
-    secondButtonHref='/que-hacemos'
-    secondButtonLabel='Ver actividades  →'
-    align='right'
-    maxChars={15}
-  />
+  <ParallaxFooter imageSrc='/media/inicio/footer.png' alt='Grupo de voluntarios de Una Gota de Salud' />
 </Layout>

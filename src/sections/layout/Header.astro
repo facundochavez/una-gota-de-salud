@@ -31,11 +31,11 @@ const isSubmenuActive = (submenu: Array<{ href: string }>) => {
 };
 ---
 
-<header class='w-full bg-white z-50 flex items-center justify-center px-[5%]'>
+<header class='w-full bg-white z-50 flex items-center justify-center px-[5%] font-satoshi'>
   <div class='w-full max-w-container py-5 flex items-center gap-8 justify-between'>
     <a href='/' class='flex items-center gap-3'>
-      <img src='/logo-symbol.svg' alt='Símbolo de Una Gota de Salud' class='h-12 w-auto' />
-      <span class='font-semibold text-2xl leading-6 text-balance text-gray-600'>Una Gota de Salud</span>
+      <img src='/logo-symbol.svg' alt='Símbolo de Una Gota de Salud' class='h-14 w-auto' />
+      <span class='font-bold text-[1.7rem] leading-6 text-balance'>Una Gota de Salud</span>
     </a>
 
     <nav class='hidden lg:flex items-center gap-7 min-w-max'>
@@ -45,7 +45,8 @@ const isSubmenuActive = (submenu: Array<{ href: string }>) => {
             <a
               href={item.href}
               class:list={[
-                'text-gray-700 hover:text-primary text-lg font-medium flex items-center gap-1',
+                'hover:text-primary text-lg font-medium flex items-center gap-1',
+                item.submenu && 'cursor-default',
                 (isActive(item.href) || (item.submenu && isSubmenuActive(item.submenu))) &&
                   'text-primary border-b-2 border-primary pointer-events-none',
               ]}

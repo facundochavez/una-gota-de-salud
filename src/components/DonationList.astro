@@ -2,16 +2,16 @@
 import donationList from '@/data/donation-list.json';
 ---
 
-<div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+<div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 font-medium'>
   <div class='space-y-4'>
-    <h3 class='text-2xl font-medium'>{donationList.alimentos.title}</h3>
+    <h3 class='text-2xl'>{donationList.alimentos.title}</h3>
     <ul class='list-disc pl-5 space-y-2 text-primary text-xl text-medium'>
       {donationList.alimentos.items.map((item) => <li>{item}</li>)}
     </ul>
   </div>
 
   <div class='space-y-4'>
-    <h3 class='text-2xl font-medium'>{donationList.medicamentos.title}</h3>
+    <h3 class='text-2xl'>{donationList.medicamentos.title}</h3>
     <ul class='list-disc pl-5 space-y-2 text-primary text-xl text-medium'>
       {donationList.medicamentos.items.map((item) => <li>{item}</li>)}
     </ul>
@@ -19,14 +19,14 @@ import donationList from '@/data/donation-list.json';
 
   <div class='space-y-8 lg:col-span-1'>
     <div class='space-y-4'>
-      <h3 class='text-2xl font-medium'>{donationList.higiene.title}</h3>
+      <h3 class='text-2xl'>{donationList.higiene.title}</h3>
       <ul class='list-disc pl-5 space-y-2 text-primary text-xl text-medium'>
         {donationList.higiene.items.map((item) => <li>{item}</li>)}
       </ul>
     </div>
 
     <div class='space-y-4'>
-      <h3 class='text-2xl font-medium'>{donationList.abrigo.title}</h3>
+      <h3 class='text-2xl'>{donationList.abrigo.title}</h3>
       <ul class='list-disc pl-5 space-y-2 text-primary text-xl text-medium'>
         {donationList.abrigo.items.map((item) => <li>{item}</li>)}
       </ul>
