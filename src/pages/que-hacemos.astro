@@ -4,6 +4,7 @@ import ParallaxHero from '@/components/ParallaxHero.astro';
 import helpAreasData from '@/data/help-areas.data.json';
 import HelpAreaItem from '@/components/HelpAreaItem.astro';
 import ParallaxFooter from '@/components/ParallaxFooter.astro';
+import CTAs from '@/components/CTAs.astro';
 ---
 
 <Layout title='Una Gota de Salud | Qué hacemos'>
@@ -17,14 +18,14 @@ import ParallaxFooter from '@/components/ParallaxFooter.astro';
   <section class='!pt-20'>
     {helpAreasData.areas.map((area) => <HelpAreaItem key={area.id} {...area} />)}
   </section>
-  <ParallaxFooter
-    imageSrc='/media/que-hacemos/footer.png'
-    alt='Vehículo de Una Gota de Salud yendo a un paraje'
+  <CTAs
     title='No necesitás ser un profesional de la salud para ayudar'
     firstButtonHref='/formas-de-ayudar'
+    firstButtonLabel='Formas de ayudar  →'
     secondButtonHref='/voluntariado'
-    firstButtonLabel='Formas de ayudar  →'
-    secondButtonLabel='Ser voluntario/a  →'
-    align='left'
+    secondButtonLabel='Ser voluntario/a  →'
+    pt={0}
+    maxChars={30}
   />
+  <ParallaxFooter imageSrc='/media/que-hacemos/footer.png' alt='Grupo de voluntarios de Una Gota de Salud' />
 </Layout>

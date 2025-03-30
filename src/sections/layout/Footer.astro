@@ -11,9 +11,9 @@ const links = [
 ];
 
 const socialLinks = [
-  { label: 'facebook', link: 'https://www.facebook.com/unagotade.salud' },
-  { label: 'instagram', link: 'https://www.instagram.com/gotadesalud/' },
-  { label: 'whatsapp', link: 'https://wa.me/543515917215' },
+  { id: 'facebook', link: 'https://www.facebook.com/unagotade.salud' },
+  { id: 'instagram', link: 'https://www.instagram.com/gotadesalud/' },
+  { id: 'whatsapp', link: 'https://wa.me/543515917215' },
 ];
 
 const credits = {
@@ -31,15 +31,15 @@ const credits = {
 <footer class='w-screen bg-primary text-white text-lg flex flex-col items-center px-[5%] pt-16 pb-12'>
   <div class='w-full max-w-container flex gap-16'>
     <!-- FIRST COLUMN -->
-    <div class='w-[40%] flex flex-col gap-4'>
+    <div class='w-[40%] flex flex-col gap-4 [&>p]:text-lg'>
       <a href='/'>
         <img src='/logo-mobile-white.svg' alt='Logotipo de Una Gota de Salud' class='w-[16rem] h-auto' />
       </a>
-      <p class='mt-4 leading-[1.5rem] text-balance'>
+      <p class='mt-4 mb-2 text-balance'>
         Una Gota de Salud es una organización no gubernamental sin fines de lucro, destinada a brindar asistencia sanitaria en parajes inhóspitos del
         noroeste de Córdoba.
       </p>
-      <p class='mt-2'>PERSONERÍA JURÍDICA Nº 30-10000000-1</p>
+      <p>PERSONERÍA JURÍDICA Nº 30-10000000-1</p>
     </div>
 
     <!-- SECOND COLUMN -->
@@ -67,7 +67,7 @@ const credits = {
         {
           socialLinks.map((social) => (
             <a href={social.link} target='_blank' rel='noopener noreferrer' class='hover:opacity-80'>
-              <img src={`/media/layout/${social.label}-icon.svg`} alt={social.label} class='w-6 h-6' />
+              <img src={`/media/layout/icon-${social.id}-white.svg`} alt={social.id} class='w-6 h-6' />
             </a>
           ))
         }
@@ -75,7 +75,7 @@ const credits = {
     </div>
   </div>
 
-  <div class='w-full max-w-container mt-12 pt-8 flex flex-col items-center gap-1 border-t border-white'>
+  <div class='w-full max-w-container mt-12 pt-8 flex flex-col items-center gap-1 border-t border-white [&>p]:text-lg'>
     <p>© 2025 Una Gota de Salud. Todos los derechos reservados</p>
     <p>
       Fotografía por <a

@@ -3,24 +3,24 @@ import Button from '@/components/Button.astro';
 ---
 
 <section class='flex flex-col items-center gap-16 text-center font-satoshi'>
-  <h2 class='text-[2.5rem] leading-[2.5rem] font-medium'>Lo que necesitamos<br />para seguir ayudando</h2>
+  <h2>Lo que necesitamos<br />para seguir ayudando</h2>
 
-  <div class='flex flex-col gap-1 text-primary text-3xl font-medium'>
-    <p>Medicamentos</p>
-    <p>Alimentos no perecederos</p>
-    <p>Productos de higiene personal</p>
-    <p>Productos de limpieza</p>
-    <p>Ropa y calzados</p>
-  </div>
+  <ul class='flex flex-col gap-1 text-primary text-3xl font-medium'>
+    <li>Medicamentos</li>
+    <li>Alimentos no perecederos</li>
+    <li>Productos de higiene personal</li>
+    <li>Productos de limpieza</li>
+    <li>Ropa y calzados</li>
+  </ul>
 
   <div class='h-0.5 w-56 bg-primary -my-8'></div>
 
-  <div class='flex flex-col gap-1 text-primary text-3xl font-medium'>
-    <p>Vehículos y choferes</p>
-    <p>Profesionales de la salud</p>
-    <p>Estudiantes de salud</p>
-    <p>Voluntarios</p>
-  </div>
+  <ul class='flex flex-col gap-1 text-primary text-3xl font-medium'>
+    <li>Vehículos y choferes</li>
+    <li>Profesionales de la salud</li>
+    <li>Estudiantes de salud</li>
+    <li>Voluntarios</li>
+  </ul>
 
   <div class='flex gap-4'>
     <Button href='/donaciones' variant='secondary'>Quiero donar &nbsp;→</Button>

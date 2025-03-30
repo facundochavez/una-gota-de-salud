@@ -1,21 +1,76 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import ParallaxFooter from '@/components/ParallaxFooter.astro';
-import CTAs from '@/components/CTAs.astro';
 import Form from '@/components/Form.astro';
+
+const socialLinks = [
+  { id: 'whatsapp', label: 'Enviar un WhatsApp', link: 'https://wa.me/543515917215' },
+  { id: 'email', label: 'Copiar email (unagotadesalud@gmail.com)', email: 'unagotadesalud@gmail.com' },
+  { id: 'facebook', label: 'Ir a Facebook', link: 'https://www.facebook.com/unagotade.salud' },
+  { id: 'instagram', label: 'Ir a Instagram', link: 'https://www.instagram.com/gotadesalud/' },
+];
 ---
 
 <Layout title='Una Gota de Salud | Contacto'>
-  <section class='h-screen'>
-    <h1>Contacto</h1>
+  <section class='!pt-20 relative flex gap-12'>
+    <div class='absolute top-0 left-1/2 w-screen h-full bg-gray-50 -translate-x-1/2 z-[-1]'></div>
+    <div class='w-full flex flex-col gap-5'>
+      <h1 class='mb-8'>Contacto</h1>
+      {
+        socialLinks.map((social) =>
+          social.id === 'email' ? (
+            <button
+              id='copy-email'
+              class='flex items-center w-fit font-satoshi font-medium text-lg underline-offset-[3px] gap-4 hover:underline active:opacity-80'
+            >
+              <img src={`/media/contacto/icon-${social.id}.svg`} alt={social.id} class='w-7 h-7' />
+              <span>{social.label}</span>
+            </button>
+          ) : (
+            <a
+              href={social.link}
+              target='_blank'
+              rel='noopener noreferrer'
+              class='flex items-center w-fit font-satoshi font-medium text-lg underline-offset-[3px] gap-4 hover:underline active:opacity-80'
+            >
+              <img src={`/media/contacto/icon-${social.id}.svg`} alt={social.id} class='w-7 h-auto' />
+              <span>{social.label}</span>
+            </a>
+          )
+        )
+      }
+    </div>
+    <Form />
   </section>
-  <Form />
-  <CTAs
-    title='Cada acción cuenta. Ayudanos a ayudar.'
+  <ParallaxFooter
+    imageSrc='/media/contacto/footer.png'
+    alt='Vehículo de Una Gota de Salud yendo a un paraje'
+    title='No necesitás ser un profesional de la salud para ayudar'
     firstButtonHref='/formas-de-ayudar'
-    firstButtonLabel='Formas de ayudar  →'
     secondButtonHref='/voluntariado'
-    secondButtonLabel='Ser voluntario/a  →'
+    firstButtonLabel='Formas de ayudar  →'
+    secondButtonLabel='Ser voluntario/a  →'
+    align='left'
   />
-  <ParallaxFooter imageSrc='/media/contacto/footer.png' alt='Grupo de voluntarios de Una Gota de Salud' />
 </Layout>
+
+<script>
+  const emailButton = document.getElementById('copy-email');
+  if (emailButton) {
+    emailButton.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText('unagotadesalud@gmail.com');
+        const spanElement = emailButton.querySelector('span');
+        if (spanElement) {
+          const originalText = spanElement.textContent || '';
+          spanElement.textContent = '¡Email copiado!';
+          setTimeout(() => {
+            spanElement.textContent = originalText;
+          }, 2000);
+        }
+      } catch (err) {
+        console.error('Error al copiar el email:', err);
+      }
+    });
+  }
+</script>

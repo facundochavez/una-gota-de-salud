@@ -5,124 +5,111 @@ interface Props {
 }
 
 const { isDonation = false, isVolunteer = false } = Astro.props;
+
+// Determinar el valor por defecto basado en las props
+const defaultWish = isVolunteer ? 'Ser voluntario/a' : isDonation ? 'Hacer una donación' : '';
 ---
 
-<form id='contact-form' class='max-w-2xl mx-auto p-8 bg-white rounded-xl shadow-lg'>
-  <div class='space-y-6'>
+<form id='contact-form' class='w-full font-satoshi text-lg'>
+  <div class='flex flex-col gap-6'>
+    <div>
+      <label for='user_fullname'> Nombre y apellido: </label>
+      <input type='text' id='user_fullname' name='user_fullname' required placeholder='Fernando Guzmán' />
+    </div>
+
+    <div class='hidden'>
+      <label for='user_nickname'> Nickname: </label>
+      <input type='text' id='user_nickname' name='user_nickname' autocomplete='off' />
+    </div>
+
+    <div class='flex gap-5 w-full'>
+      <div class='w-full'>
+        <label for='user_phone'> Teléfono: </label>
+        <input type='tel' id='user_phone' name='user_phone' required placeholder='351 123 4567' />
+      </div>
+      <div class='w-full'>
+        <label for='user_email'> Email (opcional): </label>
+        <input type='email' id='user_email' name='user_email' placeholder='fernando.guzman@gmail.com' />
+      </div>
+    </div>
+
     <div id='user-wish-section' class={!isDonation && !isVolunteer ? '' : 'hidden'}>
-      <label for='user_wish' class='block text-sm font-medium text-gray-700 mb-2'> ¿Qué te gustaría hacer? </label>
-      <select
-        id='user_wish'
-        name='user_wish'
-        required
-        class='w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
-      >
-        <option value=''>Selecciona una opción</option>
-        <option value='Hacer una donación'>Hacer una donación</option>
-        <option value='Ser voluntario/a'>Ser voluntario/a</option>
-        <option value='Otra consulta'>Otra consulta</option>
+      <label for='user_wish'> Quiero: </label>
+      <select id='user_wish' name='user_wish' required>
+        <option value='' disabled selected={!defaultWish}>Seleccioná una opción</option>
+        <option value='Ser voluntario-a' selected={defaultWish === 'Ser voluntario/a'}>Ser voluntario/a</option>
+        <option value='Hacer una donación' selected={defaultWish === 'Hacer una donación'}>Hacer una donación</option>
+        <option value='Ofrecer transporte'>Ofrecer transporte</option>
+        <option value='Otro'>Otro</option>
       </select>
     </div>
 
-    <div id='donation-section' class={isDonation ? '' : 'hidden'}>
-      <label class='block text-sm font-medium text-gray-700 mb-2'>¿Qué tipo de donación te gustaría realizar?</label>
-      <div class='space-y-2'>
-        <label class='flex items-center'>
-          <input type='checkbox' name='user_donation' value='Dinero' class='rounded border-gray-300 text-blue-600 focus:ring-blue-500' />
-          <span class='ml-2'>Dinero</span>
+    <div id='donation-section' class={isDonation ? '[&>div>label]:flex [&>div>label]:items-center [&>div>label]:!w-fit' : 'hidden'}>
+      <label> Quiero donar: </label>
+      <div class='flex flex-col mt-4'>
+        <label>
+          <input type='checkbox' name='user_donation' value='Medicamentos' />
+          <span>Medicamentos</span>
         </label>
-        <label class='flex items-center'>
-          <input type='checkbox' name='user_donation' value='Medicamentos' class='rounded border-gray-300 text-blue-600 focus:ring-blue-500' />
-          <span class='ml-2'>Medicamentos</span>
+        <label>
+          <input type='checkbox' name='user_donation' value='Alimentos no perecederos' />
+          <span>Alimentos no perecederos</span>
         </label>
-        <label class='flex items-center'>
-          <input type='checkbox' name='user_donation' value='Material médico' class='rounded border-gray-300 text-blue-600 focus:ring-blue-500' />
-          <span class='ml-2'>Material médico</span>
+        <label>
+          <input type='checkbox' name='user_donation' value='Ropa / calzados' />
+          <span>Ropa / calzados</span>
         </label>
-        <label class='flex items-center'>
-          <input type='checkbox' name='user_donation' value='Otro' class='rounded border-gray-300 text-blue-600 focus:ring-blue-500' />
-          <span class='ml-2'>Otro</span>
+        <label>
+          <input type='checkbox' name='user_donation' value='Productos de limpieza' />
+          <span>Productos de limpieza</span>
+        </label>
+        <label>
+          <input type='checkbox' name='user_donation' value='Productos de higiene personal' />
+          <span class='ml-2'>Productos de higiene personal</span>
+        </label>
+        <label>
+          <input type='checkbox' name='user_donation' value='Dinero' />
+          <span>Dinero</span>
+        </label>
+        <label>
+          <input type='checkbox' name='user_donation' value='Otro' />
+          <span>Otro</span>
         </label>
       </div>
     </div>
 
-    <div id='user-is-section' class={!isDonation && !isVolunteer ? '' : 'hidden'}>
-      <label for='user_is' class='block text-sm font-medium text-gray-700 mb-2'> ¿Quién eres? </label>
-      <select
-        id='user_is'
-        name='user_is'
-        required
-        class='w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
-      >
-        <option value=''>Selecciona una opción</option>
+    <div id='user-is-section' class={isVolunteer ? '' : 'hidden'}>
+      <label for='user_is'> Soy: </label>
+      <select id='user_is' name='user_is'>
+        <option value='' disabled selected>Seleccioná una opción</option>
         <option value='Profesional de la salud'>Profesional de la salud</option>
         <option value='Estudiante en el área de la salud'>Estudiante en el área de la salud</option>
-        <option value='Otro'>Otro</option>
+        <option value='Otro'>Alguien que quiere dar una mano</option>
       </select>
     </div>
 
     <div id='user-area-section' class='hidden'>
-      <label for='user_area' class='block text-sm font-medium text-gray-700 mb-2'> ¿En qué área te especializas? </label>
-      <select
-        id='user_area'
-        name='user_area'
-        required
-        class='w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
-      >
-        <option value=''>Selecciona una opción</option>
-        <option value='Medicina general'>Medicina general</option>
+      <label for='user_area'> Área: </label>
+      <select id='user_area' name='user_area'>
+        <option value='' disabled selected>Seleccioná una opción</option>
+        <option value='Medicina'>Medicina</option>
+        <option value='Pedriatría'>Pedriatría</option>
         <option value='Enfermería'>Enfermería</option>
         <option value='Odontología'>Odontología</option>
-        <option value='Psicología'>Psicología</option>
+        <option value='Nutrición'>Nutrición</option>
+        <option value='Farmacia'>Farmacia</option>
         <option value='Otro'>Otro</option>
       </select>
     </div>
 
     <div>
-      <label for='name' class='block text-sm font-medium text-gray-700 mb-2'> Nombre </label>
-      <input
-        type='text'
-        id='name'
-        name='name'
-        required
-        class='w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
-      />
-    </div>
-
-    <div>
-      <label for='email' class='block text-sm font-medium text-gray-700 mb-2'> Email </label>
-      <input
-        type='email'
-        id='email'
-        name='email'
-        required
-        class='w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
-      />
-    </div>
-
-    <div>
-      <label for='phone' class='block text-sm font-medium text-gray-700 mb-2'> Teléfono </label>
-      <input
-        type='tel'
-        id='phone'
-        name='phone'
-        required
-        class='w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
-      />
-    </div>
-
-    <div>
-      <label for='message' class='block text-sm font-medium text-gray-700 mb-2'> Mensaje </label>
-      <textarea
-        id='message'
-        name='message'
-        rows='4'
-        class='w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500'></textarea>
+      <label for='user_message'> Mensaje: </label>
+      <textarea id='user_message' name='user_message' rows='4' placeholder='Escribe tu mensaje aquí...' class='min-h-[15rem]'></textarea>
     </div>
 
     <button
       type='submit'
-      class='w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2'
+      class='text-lg font-medium px-8 w-fit self-end bg-primary text-white py-2 rounded-md hover:bg-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2'
     >
       Enviar
     </button>
@@ -130,21 +117,12 @@ const { isDonation = false, isVolunteer = false } = Astro.props;
 </form>
 
 <script>
-  // Cargar EmailJS desde CDN
-  const script = document.createElement('script');
-  script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
-  script.async = true;
-  document.head.appendChild(script);
-
-  script.onload = () => {
-    // @ts-ignore
-    emailjs.init('-CnEHK3O5IogwMNGA');
-  };
-
   const form = document.getElementById('contact-form') as HTMLFormElement;
+
   const userWishSelect = document.getElementById('user_wish') as HTMLSelectElement;
   const userIsSelect = document.getElementById('user_is') as HTMLSelectElement;
-  const userWishSection = document.getElementById('user-wish-section');
+  const userAreaSelect = document.getElementById('user_area') as HTMLSelectElement;
+
   const donationSection = document.getElementById('donation-section');
   const userIsSection = document.getElementById('user-is-section');
   const userAreaSection = document.getElementById('user-area-section');
@@ -156,9 +134,18 @@ const { isDonation = false, isVolunteer = false } = Astro.props;
         donationSection?.classList.remove('hidden');
         userIsSection?.classList.add('hidden');
         userAreaSection?.classList.add('hidden');
-      } else if (userWishSelect.value !== 'Hacer una donación') {
+        userIsSelect?.removeAttribute('required');
+        userAreaSelect?.removeAttribute('required');
+      } else if (userWishSelect.value === 'Ser voluntario-a') {
         donationSection?.classList.add('hidden');
         userIsSection?.classList.remove('hidden');
+        userIsSelect?.setAttribute('required', '');
+      } else {
+        donationSection?.classList.add('hidden');
+        userIsSection?.classList.add('hidden');
+        userAreaSection?.classList.add('hidden');
+        userIsSelect?.removeAttribute('required');
+        userAreaSelect?.removeAttribute('required');
       }
     });
   }
@@ -167,8 +154,10 @@ const { isDonation = false, isVolunteer = false } = Astro.props;
     userIsSelect.addEventListener('change', () => {
       if (userIsSelect.value === 'Profesional de la salud' || userIsSelect.value === 'Estudiante en el área de la salud') {
         userAreaSection?.classList.remove('hidden');
+        userAreaSelect?.setAttribute('required', '');
       } else {
         userAreaSection?.classList.add('hidden');
+        userAreaSelect?.removeAttribute('required');
       }
     });
   }
@@ -181,16 +170,37 @@ const { isDonation = false, isVolunteer = false } = Astro.props;
       const formData = new FormData(form);
       const data = Object.fromEntries(formData.entries());
 
-      // Procesar checkboxes de donación
-      if (data.user_donation) {
-        data.user_donation = Array.isArray(data.user_donation) ? data.user_donation.join(', ') : data.user_donation;
+      // Verificar si el campo oculto fue completado (probablemente por un bot)
+      if (data.user_nickname) return;
+
+      // Establecer valores por defecto para campos ocultos
+      if (donationSection?.classList.contains('hidden')) {
+        data.user_donation = '-';
+      } else {
+        // Obtener todos los checkboxes seleccionados
+        const selectedDonations = Array.from(donationSection?.querySelectorAll('input[type="checkbox"]:checked') || []).map(
+          (checkbox) => (checkbox as HTMLInputElement).value
+        );
+        data.user_donation = selectedDonations.length > 0 ? selectedDonations.join(', ') : '-';
+      }
+
+      if (userIsSection?.classList.contains('hidden')) {
+        data.user_is = '-';
+      }
+      if (userAreaSection?.classList.contains('hidden')) {
+        data.user_area = '-';
       }
 
       // @ts-ignore
-      await emailjs.send('template_vfj4kg2', data);
+      await emailjs.send('service_ypcahma', 'template_vfj4kg2', data);
 
-      alert('¡Mensaje enviado con éxito!');
       form.reset();
+      donationSection?.classList.add('hidden');
+      userIsSection?.classList.add('hidden');
+      userAreaSection?.classList.add('hidden');
+      userIsSelect?.removeAttribute('required');
+      userAreaSelect?.removeAttribute('required');
+      alert('¡Mensaje enviado con éxito!');
     } catch (error) {
       console.error('Error al enviar el formulario:', error);
       alert('Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.');

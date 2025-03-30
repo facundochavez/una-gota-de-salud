@@ -2,34 +2,56 @@
 import donationList from '@/data/donation-list.json';
 ---
 
-<div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 font-medium'>
-  <div class='space-y-4'>
-    <h3 class='text-2xl'>{donationList.alimentos.title}</h3>
-    <ul class='list-disc pl-5 space-y-2 text-primary text-xl text-medium'>
-      {donationList.alimentos.items.map((item) => <li>{item}</li>)}
-    </ul>
-  </div>
-
-  <div class='space-y-4'>
-    <h3 class='text-2xl'>{donationList.medicamentos.title}</h3>
-    <ul class='list-disc pl-5 space-y-2 text-primary text-xl text-medium'>
+<div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-9 font-medium'>
+  <div>
+    <h3>{donationList.medicamentos.title}</h3>
+    <ul class='text-primary'>
       {donationList.medicamentos.items.map((item) => <li>{item}</li>)}
     </ul>
   </div>
 
+  <div>
+    <h3>{donationList.alimentos.title}</h3>
+    <ul class='text-primary'>
+      {donationList.alimentos.items.map((item) => <li>{item}</li>)}
+    </ul>
+  </div>
+
   <div class='space-y-8 lg:col-span-1'>
-    <div class='space-y-4'>
-      <h3 class='text-2xl'>{donationList.higiene.title}</h3>
-      <ul class='list-disc pl-5 space-y-2 text-primary text-xl text-medium'>
+    <div>
+      <h3>{donationList.higiene.title}</h3>
+      <ul class='text-primary'>
         {donationList.higiene.items.map((item) => <li>{item}</li>)}
       </ul>
     </div>
 
-    <div class='space-y-4'>
-      <h3 class='text-2xl'>{donationList.abrigo.title}</h3>
-      <ul class='list-disc pl-5 space-y-2 text-primary text-xl text-medium'>
+    <div>
+      <h3>{donationList.abrigo.title}</h3>
+      <ul class='text-primary'>
         {donationList.abrigo.items.map((item) => <li>{item}</li>)}
       </ul>
     </div>
   </div>
 </div>
+
+<style>
+  h3 {
+    font-size: 1.5rem !important;
+    line-height: 2rem !important;
+    text-wrap: balance;
+  }
+  ul {
+    list-style-type: disc;
+    padding-left: 1.25rem;
+    font-weight: 500 !important;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    li {
+      font-size: 1.25rem !important;
+      line-height: 1.6rem !important;
+      margin-top: 0.4rem;
+      color: var(--primary);
+    }
+  }
+</style>

@@ -3,9 +3,10 @@ interface Props {
   href: string;
   variant?: 'primary' | 'secondary';
   class?: string;
+  target?: '_blank' | '_self';
 }
 
-const { href, variant = 'primary', class: className = '' } = Astro.props;
+const { href, variant = 'primary', class: className = '', target = '_self' } = Astro.props;
 
 const baseStyles = ' px-5 py-1.5 rounded-md text-lg font-medium inline-block whitespace-nowrap font-satoshi';
 const variantStyles = {
@@ -14,6 +15,6 @@ const variantStyles = {
 };
 ---
 
-<a href={href} class:list={[baseStyles, variantStyles[variant], className]}>
+<a href={href} class:list={[baseStyles, variantStyles[variant], className]} target={target}>
   <slot />
 </a>

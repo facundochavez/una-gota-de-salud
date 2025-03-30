@@ -3,18 +3,28 @@ import Layout from '@/layouts/Layout.astro';
 import ParallaxHero from '@/components/ParallaxHero.astro';
 import ParallaxFooter from '@/components/ParallaxFooter.astro';
 import Button from '@/components/Button.astro';
+import DonationList from '@/components/DonationList.astro';
+import Form from '@/components/Form.astro';
 ---
 
 <Layout title='Una Gota de Salud | Voluntariado'>
   <ParallaxHero
     title='Voluntariado'
-    description='Ya seas un profesional de la salud, un estudiante o simplemente alguien que quiere dar una mano, en La Gota estaremos felices de conocerte.'
+    description='Ya seas un profesional de la salud, un estudiante o simplemente alguien que quiere dar una mano, en La Gota estamos ansiosos por conocerte.'
     image='/media/voluntariado/hero.png'
     alt='Niños sosteniendo cabras en un rancho'
     fromOpacity={0.7}
   />
-  <section class='h-screen'>
-    <h1>Voluntariado</h1>
+  <section
+    class='relative font-satoshi flex flex-col gap-10 items-center !max-w-[40rem] [&>p]:text-center [&>p]:!text-4xl [&>p]:text-primary [&>p]:font-medium [&>p]:text-balance'
+  >
+    <div class='absolute top-0 left-1/2 w-screen h-full bg-gray-50 -translate-x-1/2 z-[-1]'></div>
+
+    <p>Para unirte a nosotros, podés enviarnos un WhatsApp:</p>
+    <Button href='https://wa.me/5491133333333' target='_blank' class='w-fit'>Ir a WhatsApp →</Button>
+    <p class='mt-4'>O dejarnos un mensaje:</p>
+    <Form isVolunteer={true} />
+    <p class='mt-4'>¡Te esperamos!</p>
   </section>
   <ParallaxFooter imageSrc='/media/inicio/footer.png' alt='Grupo de voluntarios de Una Gota de Salud' />
 </Layout>

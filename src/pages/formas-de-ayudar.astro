@@ -14,8 +14,8 @@ import DonationList from '@/components/DonationList.astro';
     alt='Voluntarios de Una Gota de Salud armando módulos alimentarios'
     fromOpacity={0.6}
   />
-  <section class='flex flex-col gap-6 [&>p]:text-xl'>
-    <h2 class='text-[2.5rem] font-medium'>Voluntariado</h2>
+  <section class='flex flex-col gap-6'>
+    <h2>Voluntariado</h2>
     <p>
       Nuestros miembros solidarios son el corazón de La Gota y la razón por la que podemos llevar asistencia a los parajes. Cada persona que se suma
       aporta su tiempo, conocimientos y esfuerzo en distintas áreas, desde la atención médica y nutricional hasta la organización de donaciones y la
@@ -43,7 +43,7 @@ import DonationList from '@/components/DonationList.astro';
       </div>
     </div>
     <Button href='/voluntariado' class='w-fit self-end my-6'>Quiero ser parte &nbsp;→</Button>
-    <h2 class='text-[2.5rem] font-medium'>Transporte</h2>
+    <h2>Transporte</h2>
     <p>
       Ninguna ayuda sería posible si no pudiéramos llegar al lugar. Los choferes y dueños de vehículos son voluntarios muy apreciados que facilitan el
       transporte para que La Gota pueda llegar a los parajes con todo lo necesario. Muchas veces, esta se convierte en nuestra necesidad más crítica,
@@ -59,7 +59,7 @@ import DonationList from '@/components/DonationList.astro';
       <img src={`/media/formas-de-ayudar/transporte.png`} alt='Caravana d' class='w-full h-full object-cover' />
     </div>
     <Button href='/voluntariado' class='w-fit self-end my-6'>Quiero ayudar &nbsp;→</Button>
-    <h2 class='text-[2.5rem] font-medium'>Donaciones</h2>
+    <h2>Donaciones</h2>
     <p>
       Las donaciones son una forma esencial de apoyar el trabajo de La Gota, complementando el esfuerzo de los voluntarios y choferes que llevan la
       ayuda a los parajes. Desde alimentos no perecederos, ropa, medicamentos hasta artículos de higiene, cada aporte cuenta para mejorar las
@@ -72,7 +72,7 @@ import DonationList from '@/components/DonationList.astro';
       distribución es totalmente transparente, garantizando que los recursos lleguen de forma adecuada a los lugares donde más se requieren.
     </p>
     <DonationList />
-    <Button href='/donaciones#donar' class='w-fit self-end my-6'>Quiero donar &nbsp;→</Button>
+    <Button href='/donaciones#donar' class='w-fit self-end'>Quiero donar &nbsp;→</Button>
   </section>
   <ParallaxFooter
     imageSrc='/media/formas-de-ayudar/footer.webp'
