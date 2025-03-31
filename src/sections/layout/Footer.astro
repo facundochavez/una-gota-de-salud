@@ -26,44 +26,46 @@ const credits = {
     href: 'https://www.facundochavez.com/es',
   },
 };
+
+const currentPath = Astro.url.pathname;
+
+const isActive = (href: string) => {
+  if (href === '/') {
+    return currentPath === href;
+  }
+  return currentPath.startsWith(href);
+};
 ---
 
-<footer class='w-screen bg-primary text-white text-lg flex flex-col items-center px-[5%] pt-16 pb-12'>
-  <div class='w-full max-w-container flex gap-16'>
-    <!-- FIRST COLUMN -->
-    <div class='w-[40%] flex flex-col gap-4 [&>p]:text-lg'>
-      <a href='/'>
-        <img src='/logo-mobile-white.svg' alt='Logotipo de Una Gota de Salud' class='w-[16rem] h-auto' />
-      </a>
-      <p class='mt-4 mb-2 text-balance'>
-        Una Gota de Salud es una organización no gubernamental sin fines de lucro, destinada a brindar asistencia sanitaria en parajes inhóspitos del
-        noroeste de Córdoba.
-      </p>
-      <p>PERSONERÍA JURÍDICA Nº 30-10000000-1</p>
-    </div>
-
-    <!-- SECOND COLUMN -->
-    <nav class='w-[30%] flex flex-col gap-4 pl-16'>
+<footer class='w-screen bg-primary text-white text-base sm:text-lg flex flex-col items-center px-[5%] pt-16 pb-12'>
+  <div class='w-full max-w-container grid grid-cols-1 sm:grid-cols-2 2lg:grid-cols-3 gap-4 sm:gap-12 2lg:gap-16'>
+    <!-- NAVBAR -->
+    <nav class='flex flex-col gap-4 2lg:pl-16'>
       {
         links.map((link) => (
-          <a href={link.href} class='hover:underline underline-offset-[3px] active:opacity-70'>
+          <a
+            href={link.href}
+            class:list={['hover:underline underline-offset-[3px] active:opacity-70', isActive(link.href) && 'underline 2lg:no-underline']}
+          >
             {link.label}
           </a>
         ))
       }
     </nav>
 
-    <!-- THIRD COLUMN -->
-    <div class='w-[30%] flex flex-col gap-1'>
+    <!-- CONTACT -->
+    <div class='flex flex-col sm:gap-1'>
       <Button href='/voluntariado' class='bg-white !text-primary w-fit hover:bg-white/80'>Voluntariado &nbsp;→</Button>
-      <a href='https://maps.app.goo.gl/2AQruwaYY6AMYJV96' target='_blank' class='mt-10 hover:underline underline-offset-[3px] active:opacity-70'
-        >Santa Rosa 1803, Córdoba Capital</a
+      <a
+        href='https://maps.app.goo.gl/2AQruwaYY6AMYJV96'
+        target='_blank'
+        class='mt-14 sm:mt-10 hover:underline underline-offset-[3px] active:opacity-70'>Santa Rosa 1803, Córdoba Capital</a
       >
       <a href='https://wa.me/543515917215' rel='noopener noreferrer' class='hover:underline underline-offset-[3px] active:opacity-70'
         >+54 351 591 7215</a
       >
       <a href='mailto:unagotadesalud@gmail.com' class='hover:underline underline-offset-[3px] active:opacity-70'>unagotadesalud@gmail.com</a>
-      <div class='flex gap-4 mt-10'>
+      <div class='flex gap-4 mt-4 sm:mt-10'>
         {
           socialLinks.map((social) => (
             <a href={social.link} target='_blank' rel='noopener noreferrer' class='hover:opacity-80'>
@@ -73,9 +75,21 @@ const credits = {
         }
       </div>
     </div>
+
+    <!-- BRAND -->
+    <div class='flex flex-col gap-4 [&>p]:text-base sm:[&>p]:text-lg sm:col-span-2 2lg:col-span-1 2lg:order-first mt-10 sm:mt-0'>
+      <a href='/'>
+        <img src='/logo-mobile-white.svg' alt='Logotipo de Una Gota de Salud' class='w-[14rem] sm:w-[16rem] h-auto self-center' />
+      </a>
+      <p class='mt-4 mb-2 text-balance !leading-6'>
+        Una Gota de Salud es una organización no gubernamental sin fines de lucro, destinada a brindar asistencia sanitaria en parajes inhóspitos del
+        noroeste de Córdoba.
+      </p>
+      <p>PERSONERÍA JURÍDICA Nº 30-10000000-1</p>
+    </div>
   </div>
 
-  <div class='w-full max-w-container mt-12 pt-8 flex flex-col items-center gap-1 border-t border-white [&>p]:text-lg'>
+  <div class='w-full max-w-container mt-12 pt-8 flex flex-col items-center gap-1 border-t border-white [&>p]:text-base sm:[&>p]:text-lg text-center'>
     <p>© 2025 Una Gota de Salud. Todos los derechos reservados</p>
     <p>
       Fotografía por <a

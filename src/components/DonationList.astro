@@ -4,16 +4,16 @@ import donationList from '@/data/donation-list.json';
 
 <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-9 font-medium'>
   <div>
-    <h3>{donationList.medicamentos.title}</h3>
+    <h3>{donationList.alimentos.title}</h3>
     <ul class='text-primary'>
-      {donationList.medicamentos.items.map((item) => <li>{item}</li>)}
+      {donationList.alimentos.items.map((item) => <li>{item}</li>)}
     </ul>
   </div>
 
   <div>
-    <h3>{donationList.alimentos.title}</h3>
+    <h3>{donationList.medicamentos.title}</h3>
     <ul class='text-primary'>
-      {donationList.alimentos.items.map((item) => <li>{item}</li>)}
+      {donationList.medicamentos.items.map((item) => <li>{item}</li>)}
     </ul>
   </div>
 

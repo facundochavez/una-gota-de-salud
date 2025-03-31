@@ -1,0 +1,138 @@
+---
+import Button from '@/components/Button.astro';
+import { X } from 'lucide-astro';
+
+interface Props {
+  navItems: Array<{
+    label: string;
+    href: string;
+    submenu?: Array<{ label: string; href: string }>;
+  }>;
+  currentPath: string;
+}
+
+const { navItems, currentPath } = Astro.props;
+
+const isActive = (href: string) => {
+  if (href === '/') {
+    return currentPath === href;
+  }
+  return currentPath.startsWith(href);
+};
+
+// Función para aplanar los items
+const flattenedItems = navItems.reduce(
+  (acc, item) => {
+    if (item.submenu) {
+      return [...acc, ...item.submenu];
+    }
+    return [...acc, item];
+  },
+  [] as Array<{ label: string; href: string }>
+);
+
+const socialLinks = [
+  { id: 'facebook', link: 'https://www.facebook.com/unagotade.salud' },
+  { id: 'instagram', link: 'https://www.instagram.com/gotadesalud/' },
+  { id: 'whatsapp', link: 'https://wa.me/543515917215' },
+];
+---
+
+<div id='sidebar-overlay' class='fixed inset-0 z-40 hidden'>
+  <div id='background' class='absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-300 ease-in-out'></div>
+  <div
+    id='sidebar'
+    class='fixed right-0 top-0 h-full w-[22rem] max-w-[80vw] bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50'
+  >
+    <div class='p-6 flex flex-col h-full'>
+      <div class='flex justify-end'>
+        <button id='close-sidebar' class='hover:bg-gray-100 rounded-full'>
+          <X class='w-6 h-6' />
+        </button>
+      </div>
+
+      <nav class='flex flex-col gap-4'>
+        {
+          flattenedItems.map((item) => (
+            <a
+              href={item.href}
+              class:list={[
+                'hover:text-primary text-lg font-medium w-fit',
+                isActive(item.href) && 'text-primary border-b-2 border-primary pointer-events-none',
+              ]}
+              data-close-sidebar
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+
+      <div class='pt-6 sm:hidden'>
+        <Button href='/voluntariado' data-close-sidebar>Voluntariado</Button>
+      </div>
+
+      <div class='flex flex-col flex-1 items-end justify-end gap-1 text-base text-right text-gray-500 text-balance'>
+        <div class='flex gap-4 mb-4'>
+          {
+            socialLinks.map((social) => (
+              <a href={social.link} target='_blank' rel='noopener noreferrer' class='hover:opacity-80' data-close-sidebar>
+                <img src={`/media/contacto/icon-${social.id}.svg`} alt={social.id} class='w-6 h-6' />
+              </a>
+            ))
+          }
+        </div>
+        <a href='https://maps.app.goo.gl/2AQruwaYY6AMYJV96' target='_blank' class='hover:text-primary font-medium w-fit' data-close-sidebar>
+          Santa Rosa 1803, Córdoba Capital
+        </a>
+        <a
+          href='https://wa.me/543515917215'
+          target='_blank'
+          rel='noopener noreferrer'
+          class='hover:text-primary font-medium w-fit'
+          data-close-sidebar
+        >
+          +54 351 591 7215
+        </a>
+        <a href='mailto:unagotadesalud@gmail.com' class='hover:text-primary font-medium w-fit' data-close-sidebar> unagotadesalud@gmail.com </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('sidebar-overlay');
+  const background = document.getElementById('background');
+  const closeButton = document.getElementById('close-sidebar');
+  const menuButton = document.getElementById('menu-button');
+
+  function openSidebar() {
+    overlay?.classList.remove('hidden');
+    setTimeout(() => {
+      background?.classList.remove('opacity-0');
+      sidebar?.classList.remove('translate-x-full');
+      document.body.style.overflow = 'hidden';
+    }, 10);
+  }
+
+  function closeSidebar() {
+    background?.classList.add('opacity-0');
+    sidebar?.classList.add('translate-x-full');
+    setTimeout(() => {
+      overlay?.classList.add('hidden');
+      document.body.style.overflow = '';
+    }, 300);
+  }
+
+  menuButton?.addEventListener('click', openSidebar);
+  closeButton?.addEventListener('click', closeSidebar);
+  background?.addEventListener('click', closeSidebar);
+
+  // Cerrar al hacer click en cualquier item o botón con data-close-sidebar
+  document.querySelectorAll('[data-close-sidebar]').forEach((element) => {
+    element.addEventListener('click', closeSidebar);
+  });
+
+  document.addEventListener('astro:page-load', closeSidebar);
+</script>
