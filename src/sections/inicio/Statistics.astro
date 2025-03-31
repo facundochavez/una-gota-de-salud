@@ -1,6 +1,23 @@
-<section class='px-[10%] !py-24 relative flex gap-8 justify-between [&>p]:text-center [&>p]:text-white [&>p]:font-medium [&>p]:text-4xl font-satoshi'>
+<section class='lg:px-[10%] sm:!py-24 relative grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-8 font-satoshi'>
   <div class='absolute top-0 left-1/2 w-screen h-full bg-primary -translate-x-1/2 z-[-1]'></div>
   <p>+10 parajes<br />visitados</p>
   <p>+500 familias<br />asistidas</p>
   <p>+130 viajes<br />realizados</p>
 </section>
+
+<style>
+  section {
+    & > p {
+      color: white;
+      font-weight: 500;
+      font-size: 2rem;
+      line-height: 2rem;
+      text-align: center;
+
+      @media (min-width: 75rem) {
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+      }
+    }
+  }
+</style>

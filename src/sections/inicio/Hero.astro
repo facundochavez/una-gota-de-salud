@@ -2,23 +2,25 @@
 import Button from '@/components/Button.astro';
 ---
 
-<section class='flex gap-8 !pt-12'>
-  <div class='w-full max-w-[29rem] min-h-full flex flex-col gap-8 justify-between'>
-    <div class='flex flex-col gap-10'>
-      <h1 class='text-balance'>
+<section class='flex flex-col lg:flex-row gap-8 !pt-6 lg:!pt-12'>
+  <!-- FIRST COLUMN -->
+  <div class='min-h-full flex flex-col gap-8 justify-between text-center lg:text-left'>
+    <div class='flex flex-col gap-8 items-center lg:items-start'>
+      <h1 class='text-balance lg:max-w-[15ch]'>
         Brindamos asistencia sanitaria en zonas inhóspitas del
         <span class='text-primary'>noroeste cordobés</span>
       </h1>
-      <p class='text-[1.4rem] leading-[1.7rem] text-balance'>
+      <p class='text-[1.2rem] 2lg:text-[1.4rem] leading-[1.5rem] 2lg:leading-[1.7rem] text-balance max-w-[50ch]'>
         Somos profesionales de la salud, estudiantes y voluntarios comprometidos con el bienestar de quienes más lo necesitan.
       </p>
     </div>
-    <div class='flex gap-4 mt-6'>
-      <Button href='/quienes-somos' variant='secondary'>Sobre nosotros &nbsp;→</Button>
-      <Button href='/formas-de-ayudar'>Quiero ayudar &nbsp;→</Button>
+    <div class='w-full flex flex-col xs:flex-row justify-center lg:justify-start gap-3 sm:gap-4 lg:mt-6'>
+      <Button href='/quienes-somos' variant='secondary' class='w-full xs:w-fit'>Sobre nosotros &nbsp;→</Button>
+      <Button href='/formas-de-ayudar' class='w-full xs:w-fit'>Quiero ayudar &nbsp;→</Button>
     </div>
   </div>
-  <div class='relative w-full min-h-full'>
-    <video src='/media/inicio/hero-video.webm' autoplay muted loop class='rounded-xl w-full h-full object-cover'></video>
+
+  <div class='relative w-full min-h-full scale-[1.12] origin-top lg:scale-100 mt-4 lg:mt-0'>
+    <video src='/media/inicio/hero-video.webm' autoplay muted loop class='lg:rounded-xl w-full h-full object-cover'></video>
   </div>
 </section>
