@@ -5,7 +5,7 @@ import Button from '@/components/Button.astro';
 <section class='flex flex-col items-center gap-16 text-center font-satoshi'>
   <h2>Lo que necesitamos<br />para seguir ayudando</h2>
 
-  <ul class='flex flex-col gap-1 text-primary text-3xl font-medium'>
+  <ul class='flex flex-col gap-1 text-primary text-2xl 2lg:text-3xl font-medium leading-7'>
     <li>Medicamentos</li>
     <li>Alimentos no perecederos</li>
     <li>Productos de higiene personal</li>
@@ -15,15 +15,15 @@ import Button from '@/components/Button.astro';
 
   <div class='h-0.5 w-56 bg-primary -my-8'></div>
 
-  <ul class='flex flex-col gap-1 text-primary text-3xl font-medium'>
+  <ul class='flex flex-col gap-1 text-primary text-2xl 2lg:text-3xl font-medium leading-7'>
     <li>Vehículos y choferes</li>
     <li>Profesionales de la salud</li>
     <li>Estudiantes de salud</li>
     <li>Voluntarios</li>
   </ul>
 
-  <div class='flex gap-4'>
-    <Button href='/donaciones' variant='secondary'>Quiero donar &nbsp;→</Button>
-    <Button href='/voluntariado'>Quiero ser parte &nbsp;→</Button>
+  <div class='w-full flex flex-col xs:flex-row justify-center gap-3 sm:gap-4'>
+    <Button href='/donaciones' variant='secondary' class='w-full xs:w-fit'>Quiero donar &nbsp;→</Button>
+    <Button href='/voluntariado' class='w-full xs:w-fit'>Quiero ser parte &nbsp;→</Button>
   </div>
 </section>

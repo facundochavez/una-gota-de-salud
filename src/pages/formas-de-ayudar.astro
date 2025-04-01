@@ -9,12 +9,12 @@ import DonationList from '@/components/DonationList.astro';
 <Layout title='Una Gota de Salud | Formas de ayudar'>
   <ParallaxHero
     title='Formas de ayudar'
-    description='Desde donaciones hasta ser parte de nosotros, hay muchas formas de hacer la diferencia y cada aporte es más que apreciado.'
+    description='Desde donaciones hasta ser parte de nosotros, hay muchas formas de hacer la diferencia y cada aporte es más que valioso.'
     image='/media/formas-de-ayudar/hero.png'
     alt='Voluntarios de Una Gota de Salud armando módulos alimentarios'
     fromOpacity={0.6}
   />
-  <section class='flex flex-col gap-6'>
+  <section class='flex flex-col gap-8'>
     <h2>Voluntariado</h2>
     <p>
       Nuestros miembros solidarios son el corazón de La Gota y la razón por la que podemos llevar asistencia a los parajes. Cada persona que se suma
@@ -24,25 +24,36 @@ import DonationList from '@/components/DonationList.astro';
       contás con formación en salud, tu aporte es aún más valioso, ya que nos permite ampliar la atención médica y mejorar el acompañamiento a las
       comunidades.
     </p>
+    <div class='md:hidden relative min-w-full md:min-w-[unset] aspect-[1.5] rounded-xl overflow-hidden h-full w-[55%]'>
+      <img
+        src={`/media/formas-de-ayudar/voluntariado-1.png`}
+        alt='Voluntarios de Una Gota de Salud preparando módulos alimentarios'
+        class='w-full h-full object-cover'
+      />
+    </div>
     <p>
       Ser voluntario no solo implica brindar ayuda, sino también compartir una experiencia transformadora. Quienes participan en los viajes conviven
       con las comunidades, conocen sus realidades de cerca y aprenden el valor de la solidaridad en su máxima expresión. Para muchos, es una
       oportunidad de crecimiento personal y profesional, mientras que para los habitantes de los parajes, cada voluntario representa una muestra de
       esperanza y compromiso.
     </p>
-    <div class='flex gap-8 h-[28rem] w-full mt-8'>
-      <div class='relative h-full w-[55%] rounded-xl overflow-hidden'>
+    <div class='flex flex-col md:flex-row gap-8 md:h-[28rem] w-full md:mt-8'>
+      <div class='hidden md:flex relative min-w-full md:min-w-[unset] aspect-[1.5] rounded-xl overflow-hidden h-full w-[55%]'>
         <img
           src={`/media/formas-de-ayudar/voluntariado-1.png`}
           alt='Voluntarios de Una Gota de Salud preparando módulos alimentarios'
           class='w-full h-full object-cover'
         />
       </div>
-      <div class='relative h-full flex-1 rounded-xl overflow-hidden'>
-        <img src={`/media/formas-de-ayudar/voluntariado-2.png`} alt='Miembros de Una Gota de Salud' class='w-full h-full object-cover' />
+      <div class='relative w-full aspect-[1.5] md:h-full flex-1 rounded-xl overflow-hidden'>
+        <img
+          src={`/media/formas-de-ayudar/voluntariado-2.png`}
+          alt='Miembros de Una Gota de Salud'
+          class='w-full h-full object-cover object-[30%_30%]'
+        />
       </div>
     </div>
-    <Button href='/voluntariado' class='w-fit self-end my-6'>Quiero ser parte &nbsp;→</Button>
+    <Button href='/voluntariado' class='w-full xs:w-fit self-end mb-6 ms:mt-6'>Quiero ser parte &nbsp;→</Button>
     <h2>Transporte</h2>
     <p>
       Ninguna ayuda sería posible si no pudiéramos llegar al lugar. Los choferes y dueños de vehículos son voluntarios muy apreciados que facilitan el
@@ -55,10 +66,10 @@ import DonationList from '@/components/DonationList.astro';
       cualquier persona que pueda ofrecer un vehículo y su tiempo como chofer está brindando una ayuda invaluable para que la asistencia llegue a los
       parajes sin tener que dejar nada atrás.
     </p>
-    <div class='relative *:flex gap-8 h-[28rem] w-full mt-8 rounded-xl overflow-hidden'>
+    <div class='relative gap-8 md:h-[28rem] w-full md:mt-8 rounded-xl overflow-hidden aspect-[1.5] md:aspect-[unset]'>
       <img src={`/media/formas-de-ayudar/transporte.png`} alt='Caravana d' class='w-full h-full object-cover' />
     </div>
-    <Button href='/voluntariado' class='w-fit self-end my-6'>Quiero ayudar &nbsp;→</Button>
+    <Button href='/voluntariado' class='w-full xs:w-fit self-end mb-6 ms:mt-6'>Quiero ayudar &nbsp;→</Button>
     <h2>Donaciones</h2>
     <p>
       Las donaciones son una forma esencial de apoyar el trabajo de La Gota, complementando el esfuerzo de los voluntarios y choferes que llevan la
@@ -73,7 +84,7 @@ import DonationList from '@/components/DonationList.astro';
       sus nuevos dueños.
     </p>
     <DonationList />
-    <Button href='/donaciones#donar' class='w-fit self-end !-mt-8'>Quiero donar &nbsp;→</Button>
+    <Button href='/donaciones#donar' class='w-full xs:w-fit self-end !-mt-8'>Quiero donar &nbsp;→</Button>
   </section>
   <ParallaxFooter
     imageSrc='/media/formas-de-ayudar/footer.webp'

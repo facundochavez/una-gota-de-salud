@@ -12,7 +12,7 @@ const socialLinks = [
 ---
 
 <Layout title='Una Gota de Salud | Contacto'>
-  <section class='!pt-20 relative flex gap-12'>
+  <section class='!pt-20 relative flex flex-col lg:flex-row gap-12 !max-w-[40rem] lg:!max-w-[85rem]'>
     <div class='absolute top-0 left-1/2 w-screen h-full bg-gray-50 -translate-x-1/2 z-[-1]'></div>
     <div class='w-full flex flex-col gap-5'>
       <h1 class='mb-8'>Contacto</h1>
@@ -21,9 +21,9 @@ const socialLinks = [
           social.id === 'email' ? (
             <button
               id='copy-email'
-              class='flex items-center w-fit font-satoshi font-medium text-lg underline-offset-[3px] gap-4 hover:underline active:opacity-80'
+              class='flex items-center w-fit font-satoshi font-medium text-lg text-left leading-5 underline-offset-[3px] gap-4 hover:underline active:opacity-80'
             >
-              <img src={`/media/contacto/icon-${social.id}.svg`} alt={social.id} class='w-7 h-7' />
+              <img src={`/icons/icon-${social.id}.svg`} alt={social.id} class='w-7 h-7' />
               <span>{social.label}</span>
             </button>
           ) : (
@@ -31,9 +31,9 @@ const socialLinks = [
               href={social.link}
               target='_blank'
               rel='noopener noreferrer'
-              class='flex items-center w-fit font-satoshi font-medium text-lg underline-offset-[3px] gap-4 hover:underline active:opacity-80'
+              class='flex items-center w-fit font-satoshi font-medium text-lg text-left leading-5 underline-offset-[3px] gap-4 hover:underline active:opacity-80'
             >
-              <img src={`/media/contacto/icon-${social.id}.svg`} alt={social.id} class='w-7 h-auto' />
+              <img src={`/icons/icon-${social.id}.svg`} alt={social.id} class='w-7 h-auto' />
               <span>{social.label}</span>
             </a>
           )

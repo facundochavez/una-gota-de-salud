@@ -25,12 +25,19 @@ import donationList from '@/data/donation-list.json';
       </ul>
     </div>
 
-    <div>
+    <div class='hidden lg:flex flex-col !mt-16'>
       <h3>{donationList.abrigo.title}</h3>
       <ul class='text-primary'>
         {donationList.abrigo.items.map((item) => <li>{item}</li>)}
       </ul>
     </div>
+  </div>
+
+  <div class='lg:hidden'>
+    <h3>{donationList.abrigo.title}</h3>
+    <ul class='text-primary'>
+      {donationList.abrigo.items.map((item) => <li>{item}</li>)}
+    </ul>
   </div>
 </div>
 

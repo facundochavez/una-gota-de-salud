@@ -1,6 +1,6 @@
 {
   "alimentos": {
-    "title": "Alimentos no perecederos",
+    "title": "Alimentos no perecederos:",
     "items": [
       "Leche en polvo",
       "Leche larga vida",
@@ -28,7 +28,7 @@
     ]
   },
   "medicamentos": {
-    "title": "Medicamentos",
+    "title": "Medicamentos:",
     "items": [
       "Enalapril / comp. 10 y 20 mg",
       "Ibuprofeno / comp. y jarabe",
@@ -52,7 +52,7 @@
     ]
   },
   "higiene": {
-    "title": "Productos de limpieza e higiene personal",
+    "title": "Productos de limpieza e higiene personal:",
     "items": [
       "Cepillo dental",
       "Pasta de dientes",
@@ -67,7 +67,7 @@
     ]
   },
   "abrigo": {
-    "title": "Abrigo y calzado (no recibimos rotos ni en mal estado)",
+    "title": "Abrigo y calzado (no recibimos rotos ni en mal estado):",
     "items": ["Remeras", "Camperas", "Pantalones", "Zapatillas", "Frazadas"]
   }
 }

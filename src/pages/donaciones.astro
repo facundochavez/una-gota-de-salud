@@ -15,17 +15,17 @@ import Button from '@/components/Button.astro';
     image='/media/donaciones/hero.png'
     alt='Módulos alimentarios de Una Gota de Salud'
   />
-  <section class='flex flex-col gap-12'>
+  <section class='flex flex-col gap-6 2lg:gap-12'>
     <h2 class='mb-8'>Lista de necesidades</h2>
     <DonationList />
   </section>
   <section
     id='donar'
-    class='relative font-satoshi flex flex-col gap-10 items-center !max-w-[40rem] [&>p]:text-center [&>p]:!text-4xl [&>p]:text-primary [&>p]:font-medium [&>p]:text-balance'
+    class='relative font-satoshi flex flex-col gap-10 items-center !max-w-[40rem] [&>p]:text-center [&>p]:!text-3xl [&>p]:2lg:!text-4xl [&>p]:text-primary [&>p]:font-medium [&>p]:text-balance'
   >
     <div class='absolute top-0 left-1/2 w-screen h-full bg-gray-50 -translate-x-1/2 z-[-1]'></div>
     <p>Para donar, podés enviarnos un WhatsApp:</p>
-    <Button href='https://wa.me/5491133333333' target='_blank' class='w-fit'>Ir a WhatsApp →</Button>
+    <Button href='https://wa.me/5491133333333' target='_blank' class='w-full xs:w-fit'>Ir a WhatsApp →</Button>
     <p class='mt-4'>O dejarnos un mensaje:</p>
     <Form isDonation={true} />
   </section>

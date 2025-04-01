@@ -1,48 +1,96 @@
 ---
-const firstContainerImages = [
-  { alt: 'Médica con paciente', aspectRatio: 1 },
-  { alt: 'Nutricionista pesando a niño', aspectRatio: 1 },
-  { alt: 'Joven en sillas de ruedas sonriendo', aspectRatio: 1 },
-  { alt: 'Médica atendiendo a anciana en silla de ruedas', aspectRatio: 1.36 },
-  { alt: 'Niño sonriente con una cabra', aspectRatio: 0.73 },
-  { alt: 'Médicas atendiendo a niña', aspectRatio: 1.4 },
-  { alt: 'Niño sonriente con yogurt', aspectRatio: 0.67 },
-];
-const secondContainerImages = [
-  { alt: 'Niños pintando libros para colorear en el suelo', aspectRatio: 1.35 },
-  { alt: 'Niño sonriente en silla de ruedas con un trencito de juguete en las manos', aspectRatio: 0.74 },
-  { alt: 'Pediatra sosteniendo a beba', aspectRatio: 1.39 },
-  { alt: 'Odontóloga atendiendo a un niño', aspectRatio: 0.82 },
-  { alt: 'Niños con ropas donadas nuevas levantando el pulgar hacia la cámara', aspectRatio: 1.37 },
-  { alt: 'Hombre dando de comer a un perro', aspectRatio: 0.82 },
-  { alt: 'Médica leyendo historia clínica', aspectRatio: 0.79 },
+const images = [
+  { id: 0, alt: 'Médica con paciente', aspectRatio: 1 },
+  { id: 1, alt: 'Nutricionista pesando a niño', aspectRatio: 1 },
+  { id: 2, alt: 'Joven en sillas de ruedas sonriendo', aspectRatio: 1 },
+  { id: 3, alt: 'Médica atendiendo a anciana en silla de ruedas', aspectRatio: 1.36 },
+  { id: 4, alt: 'Niño sonriente con una cabra', aspectRatio: 0.73 },
+  { id: 5, alt: 'Médicas atendiendo a niña', aspectRatio: 1.4 },
+  { id: 6, alt: 'Niño sonriente con yogurt', aspectRatio: 0.67 },
+  { id: 7, alt: 'Niños pintando libros para colorear en el suelo', aspectRatio: 1.35 },
+  { id: 8, alt: 'Niño sonriente en silla de ruedas con un trencito de juguete en las manos', aspectRatio: 0.74 },
+  { id: 9, alt: 'Pediatra sosteniendo a beba', aspectRatio: 1.39 },
+  { id: 10, alt: 'Odontóloga atendiendo a un niño', aspectRatio: 0.82 },
+  { id: 11, alt: 'Niños con ropas donadas nuevas levantando el pulgar hacia la cámara', aspectRatio: 1.37 },
+  { id: 12, alt: 'Hombre dando de comer a un perro', aspectRatio: 0.82 },
+  { id: 13, alt: 'Médica leyendo historia clínica', aspectRatio: 0.79 },
 ];
 ---
 
-<section id='carousel-section' class='relative min-h-[250vh] !p-0'>
-  <div id='carousel-wrapper' class='absolute top-0 left-1/2 w-screen h-full -translate-x-1/2'>
+<section id='carousel-section' class='relative 2lg:min-h-[250vh] !pt-8 !pb-24 2lg:!p-0'>
+  <div class='flex 2lg:hidden flex-col gap-6 [&>div]:flex [&>div]:gap-6 [&>div]:h-[16rem] overflow-visible'>
+    <div id='carousel-first-container-mobile'>
+      {
+        images.slice(0, 4).map((image) => (
+          <div style={`aspect-ratio: ${image.aspectRatio}`}>
+            <img src={`/media/inicio/gallery-${image.id}.webp`} alt={image.alt} class='h-full w-full object-cover rounded-lg' />
+          </div>
+        ))
+      }
+      {
+        images.slice(0, 4).map((image) => (
+          <div style={`aspect-ratio: ${image.aspectRatio}`}>
+            <img src={`/media/inicio/gallery-${image.id}.webp`} alt={image.alt} class='h-full w-full object-cover rounded-lg' />
+          </div>
+        ))
+      }
+    </div>
+    <div id='carousel-second-container-mobile' class='self-end flex-row-reverse'>
+      {
+        images.slice(4, 8).map((image) => (
+          <div style={`aspect-ratio: ${image.aspectRatio}`}>
+            <img src={`/media/inicio/gallery-${image.id}.webp`} alt={image.alt} class='h-full w-full object-cover rounded-lg' />
+          </div>
+        ))
+      }
+      {
+        images.slice(4, 8).map((image) => (
+          <div style={`aspect-ratio: ${image.aspectRatio}`}>
+            <img src={`/media/inicio/gallery-${image.id}.webp`} alt={image.alt} class='h-full w-full object-cover rounded-lg' />
+          </div>
+        ))
+      }
+    </div>
+    <div id='carousel-third-container-mobile'>
+      {
+        images.slice(8, 13).map((image) => (
+          <div style={`aspect-ratio: ${image.aspectRatio}`}>
+            <img src={`/media/inicio/gallery-${image.id}.webp`} alt={image.alt} class='h-full w-full object-cover rounded-lg' />
+          </div>
+        ))
+      }
+      {
+        images.slice(8, 13).map((image) => (
+          <div style={`aspect-ratio: ${image.aspectRatio}`}>
+            <img src={`/media/inicio/gallery-${image.id}.webp`} alt={image.alt} class='h-full w-full object-cover rounded-lg' />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+  <div id='carousel-wrapper' class='hidden 2lg:flex absolute top-0 left-1/2 w-screen h-full -translate-x-1/2'>
     <div class='sticky top-[5vh] h-screen w-full flex flex-col items-center gap-6'>
       <div id='carousel-first-container' class='flex gap-6 [&>div]:relative [&>div]:overflow-hidden [&>div]:rounded-xl'>
         {
-          firstContainerImages.slice(3).map((image, index) => (
+          images.slice(3, 7).map((image) => (
             <div class='h-full' style={`aspect-ratio: ${image.aspectRatio}`}>
-              <img src={`/media/inicio/gallery-1.${index + 3}.webp`} alt={image.alt} class='h-full w-full object-cover' />
+              <img src={`/media/inicio/gallery-${image.id}.webp`} alt={image.alt} class='h-full w-full object-cover' />
             </div>
           ))
         }
         <div class='h-full' id='carousel-left'>
-          <img src='/media/inicio/gallery-1.0.webp' alt={firstContainerImages[0].alt} class='absolute inset-0 h-full w-full object-cover' />
+          <img src={`/media/inicio/gallery-${images[0].id}.webp`} alt={images[0].alt} class='absolute inset-0 h-full w-full object-cover' />
         </div>
         <div class='h-[95vh] max-h-[60vw]' id='carousel-center'>
-          <img src='/media/inicio/gallery-1.1.webp' alt={firstContainerImages[1].alt} class='absolute inset-0 h-full w-full object-cover' />
+          <img src={`/media/inicio/gallery-${images[1].id}.webp`} alt={images[1].alt} class='absolute inset-0 h-full w-full object-cover' />
         </div>
         <div class='h-full' id='carousel-right'>
-          <img src='/media/inicio/gallery-1.2.webp' alt={firstContainerImages[2].alt} class='absolute inset-0 h-full w-full object-cover' />
+          <img src={`/media/inicio/gallery-${images[2].id}.webp`} alt={images[2].alt} class='absolute inset-0 h-full w-full object-cover' />
         </div>
         {
-          firstContainerImages.slice(3).map((image, index) => (
+          images.slice(3, 7).map((image) => (
             <div class='h-full' style={`aspect-ratio: ${image.aspectRatio}`}>
-              <img src={`/media/inicio/gallery-1.${index + 3}.webp`} alt={image.alt} class='h-full w-full object-cover' />
+              <img src={`/media/inicio/gallery-${image.id}.webp`} alt={image.alt} class='h-full w-full object-cover' />
             </div>
           ))
         }
@@ -52,16 +100,16 @@ const secondContainerImages = [
         class='h-[95vh] max-h-[60vw] flex flex-row-reverse gap-6 [&>div]:relative [&>div]:overflow-hidden [&>div]:rounded-xl'
       >
         {
-          secondContainerImages.map((image, index) => (
+          images.slice(7).map((image) => (
             <div class='h-full' style={`aspect-ratio: ${image.aspectRatio}`}>
-              <img src={`/media/inicio/gallery-2.${index}.webp`} alt={image.alt} class='h-full w-full object-cover' />
+              <img src={`/media/inicio/gallery-${image.id}.webp`} alt={image.alt} class='h-full w-full object-cover' />
             </div>
           ))
         }
         {
-          secondContainerImages.map((image, index) => (
+          images.slice(7).map((image) => (
             <div class='h-full' style={`aspect-ratio: ${image.aspectRatio}`}>
-              <img src={`/media/inicio/gallery-2.${index}.webp`} alt={image.alt} class='h-full w-full object-cover' />
+              <img src={`/media/inicio/gallery-${image.id}.webp`} alt={image.alt} class='h-full w-full object-cover' />
             </div>
           ))
         }
@@ -78,6 +126,10 @@ const secondContainerImages = [
   const right = document.getElementById('carousel-right');
   const firstContainer = document.getElementById('carousel-first-container');
   const secondContainer = document.getElementById('carousel-second-container');
+
+  const firstContainerMobile = document.getElementById('carousel-first-container-mobile');
+  const secondContainerMobile = document.getElementById('carousel-second-container-mobile');
+  const thirdContainerMobile = document.getElementById('carousel-third-container-mobile');
 
   if (wrapper && section && left && center && right && firstContainer) {
     let lastLeftAspectRatio, lastCenterAspectRatio, lastRightAspectRatio;
@@ -127,6 +179,15 @@ const secondContainerImages = [
         const progressForTranslation = Math.min(1, Math.max(0, 1 - sectionRect.bottom / (sectionRect.height + window.innerHeight * 0.05)));
         firstContainer.style.transform = `translateX(-${80 * progressForTranslation}vw)`;
         secondContainer.style.transform = `translateX(${80 * progressForTranslation}vw)`;
+
+        const progressForMobileTranslation = Math.min(
+          1,
+          Math.max(0, (window.innerHeight - sectionRect.top) / (sectionRect.height + window.innerHeight))
+        );
+
+        firstContainerMobile.style.transform = `translateX(-${50 * (1500 / window.innerWidth) * progressForMobileTranslation}%)`;
+        secondContainerMobile.style.transform = `translateX(${50 * (1500 / window.innerWidth) * progressForMobileTranslation}%)`;
+        thirdContainerMobile.style.transform = `translateX(-${50 * (1500 / window.innerWidth) * progressForMobileTranslation}%)`;
       }
     };
 

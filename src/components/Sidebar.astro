@@ -34,6 +34,7 @@ const flattenedItems = navItems.reduce(
 const socialLinks = [
   { id: 'facebook', link: 'https://www.facebook.com/unagotade.salud' },
   { id: 'instagram', link: 'https://www.instagram.com/gotadesalud/' },
+  { id: 'email', link: 'mailto:unagotadesalud@gmail.com' },
   { id: 'whatsapp', link: 'https://wa.me/543515917215' },
 ];
 ---
@@ -73,15 +74,6 @@ const socialLinks = [
       </div>
 
       <div class='flex flex-col flex-1 items-end justify-end gap-1 text-base text-right text-gray-500 text-balance'>
-        <div class='flex gap-4 mb-4'>
-          {
-            socialLinks.map((social) => (
-              <a href={social.link} target='_blank' rel='noopener noreferrer' class='hover:opacity-80' data-close-sidebar>
-                <img src={`/media/contacto/icon-${social.id}.svg`} alt={social.id} class='w-6 h-6' />
-              </a>
-            ))
-          }
-        </div>
         <a href='https://maps.app.goo.gl/2AQruwaYY6AMYJV96' target='_blank' class='hover:text-primary font-medium w-fit' data-close-sidebar>
           Santa Rosa 1803, Córdoba Capital
         </a>
@@ -94,7 +86,15 @@ const socialLinks = [
         >
           +54 351 591 7215
         </a>
-        <a href='mailto:unagotadesalud@gmail.com' class='hover:text-primary font-medium w-fit' data-close-sidebar> unagotadesalud@gmail.com </a>
+        <div class='flex gap-4 mt-4'>
+          {
+            socialLinks.map((social) => (
+              <a href={social.link} target='_blank' rel='noopener noreferrer' class='hover:opacity-80' data-close-sidebar>
+                <img src={`/icons/icon-${social.id}.svg`} alt={social.id} class='w-6 h-6' />
+              </a>
+            ))
+          }
+        </div>
       </div>
     </div>
   </div>

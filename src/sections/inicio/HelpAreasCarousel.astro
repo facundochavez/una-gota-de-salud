@@ -5,14 +5,21 @@ import HelpAreaCard from '@/components/HelpAreaCard.astro';
 const totalCards = helpAreasData.areas.length;
 ---
 
-<section class='relative min-h-[300vh] !p-0'>
-  <div class='sticky top-0 h-screen min-h-fit flex flex-col justify-center py-16' id='help-areas-wrapper'>
+<section class='relative 2lg:min-h-[300vh] 2lg:!p-0'>
+  <div class='w-full 2lg:hidden'>
+    <h2>Áreas de ayuda</h2>
+    <ul class='mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 list-none'>
+      {helpAreasData.areas.map((area) => <HelpAreaCard {...area} />)}
+    </ul>
+  </div>
+
+  <div class='hidden 2lg:flex sticky top-0 h-screen min-h-fit flex-col justify-center py-16' id='help-areas-wrapper'>
     <div class='w-full max-w-container mx-auto' id='help-areas-title'>
-      <h2 class='text-[2.5rem] leading-[2.1rem] font-medium mb-16'>Áreas de ayuda</h2>
+      <h2>Áreas de ayuda</h2>
     </div>
 
     <div class='w-screen relative left-1/2 -translate-x-1/2' id='help-areas-container'>
-      <ul class='flex gap-12 pl-[max(5%,calc((100vw-85rem)/2))]' id='help-areas-list'>
+      <ul class='mt-16 flex gap-12 pl-[max(5%,calc((100vw-85rem)/2))]' id='help-areas-list'>
         {helpAreasData.areas.map((area) => <HelpAreaCard {...area} />)}
       </ul>
     </div>

@@ -9,15 +9,15 @@ const { id, title, summary } = Astro.props;
 import Button from './Button.astro';
 ---
 
-<li class='w-[22rem] flex-shrink-0'>
-  <article class='flex flex-col gap-6'>
+<li class='w-full 2lg:w-[22rem] flex-shrink-0'>
+  <article class='flex flex-col gap-4 2lg:gap-6'>
     <h3>{title}</h3>
-    <div class='relative w-full aspect-[6/5] rounded-xl overflow-hidden'>
+    <div class='relative w-full aspect-[6/5] rounded-xl overflow-hidden max-h-[20rem] mt-2 sm:mt-0'>
       <img src={`/media/inicio/help-${id}.webp`} alt={`Área de ${title}`} class='w-full h-full object-cover' />
     </div>
     <div class='flex flex-col gap-2'>
-      <p class='text-lg leading-6'>{summary}</p>
+      <p class='text-base 2lg:text-lg 2lg:leading-6'>{summary}</p>
     </div>
-    <Button href={`/que-hacemos#${id}`} class='self-start'> Ver más &nbsp;→ </Button>
+    <Button href={`/que-hacemos#${id}`} class='self-start w-full sm:w-fit'> Ver más &nbsp;→ </Button>
   </article>
 </li>
