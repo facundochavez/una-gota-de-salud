@@ -45,7 +45,7 @@ const isActive = (href: string) => {
         links.map((link) => (
           <a
             href={link.href}
-            class:list={['hover:underline underline-offset-[3px] active:opacity-70', isActive(link.href) && 'underline 2lg:no-underline']}
+            class:list={['hover:underline underline-offset-[6px] active:opacity-70 w-fit', isActive(link.href) && 'underline pointer-events-none']}
           >
             {link.label}
           </a>

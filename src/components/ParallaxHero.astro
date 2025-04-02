@@ -8,11 +8,12 @@ const { title, description, image, alt, fromOpacity = 0.5, toOpacity = 0, object
       id='parallax-image'
       src={image}
       alt={alt}
-      class=`w-full min-h-[calc(100%+100px)] object-cover -mt-[100px] object-[${objectPosition}%_center]`
+      class='w-full min-h-[calc(100%+100px)] object-cover -mt-[100px]'
+      style={`object-position: ${objectPosition}% center;`}
     />
     <div
       class='absolute inset-0 w-full h-full sm:hidden'
-      style={`background: linear-gradient(to right, rgba(0,0,0,${fromOpacity}) 30%, rgba(0,0,0,${0.4}) 100%)`}
+      style={`background: linear-gradient(to right, rgba(0,0,0,${fromOpacity}) 30%, rgba(0,0,0,${0.3}) 100%)`}
     >
     </div>
     <div

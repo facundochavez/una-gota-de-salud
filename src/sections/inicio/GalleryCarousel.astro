@@ -18,54 +18,60 @@ const images = [
 ---
 
 <section id='carousel-section' class='relative 2lg:min-h-[250vh] !pt-8 !pb-24 2lg:!p-0'>
-  <div class='flex 2lg:hidden flex-col gap-6 [&>div]:flex [&>div]:gap-6 [&>div]:h-[16rem] overflow-visible'>
-    <div id='carousel-first-container-mobile'>
-      {
-        images.slice(0, 4).map((image) => (
-          <div style={`aspect-ratio: ${image.aspectRatio}`}>
-            <img src={`/media/inicio/gallery-${image.id}.webp`} alt={image.alt} class='h-full w-full object-cover rounded-lg' />
-          </div>
-        ))
-      }
-      {
-        images.slice(0, 4).map((image) => (
-          <div style={`aspect-ratio: ${image.aspectRatio}`}>
-            <img src={`/media/inicio/gallery-${image.id}.webp`} alt={image.alt} class='h-full w-full object-cover rounded-lg' />
-          </div>
-        ))
-      }
+  <div class='flex 2lg:hidden flex-col gap-6 [&>div>div]:flex [&>div>div]:gap-6 [&>div>div]:h-[16rem] [&>div>div]:w-fit overflow-visible'>
+    <div class='translate-x-[-1.5rem]'>
+      <div id='carousel-first-container-mobile'>
+        {
+          images.slice(0, 4).map((image) => (
+            <div style={`aspect-ratio: ${image.aspectRatio}`}>
+              <img src={`/media/inicio/gallery-${image.id}.webp`} alt={image.alt} class='h-full w-full object-cover rounded-lg' />
+            </div>
+          ))
+        }
+        {
+          images.slice(0, 4).map((image) => (
+            <div style={`aspect-ratio: ${image.aspectRatio}`}>
+              <img src={`/media/inicio/gallery-${image.id}.webp`} alt={image.alt} class='h-full w-full object-cover rounded-lg' />
+            </div>
+          ))
+        }
+      </div>
     </div>
-    <div id='carousel-second-container-mobile' class='self-end flex-row-reverse'>
-      {
-        images.slice(4, 8).map((image) => (
-          <div style={`aspect-ratio: ${image.aspectRatio}`}>
-            <img src={`/media/inicio/gallery-${image.id}.webp`} alt={image.alt} class='h-full w-full object-cover rounded-lg' />
-          </div>
-        ))
-      }
-      {
-        images.slice(4, 8).map((image) => (
-          <div style={`aspect-ratio: ${image.aspectRatio}`}>
-            <img src={`/media/inicio/gallery-${image.id}.webp`} alt={image.alt} class='h-full w-full object-cover rounded-lg' />
-          </div>
-        ))
-      }
+    <div class='self-end translate-x-[1.5rem]'>
+      <div id='carousel-second-container-mobile' class='flex-row-reverse'>
+        {
+          images.slice(4, 8).map((image) => (
+            <div style={`aspect-ratio: ${image.aspectRatio}`}>
+              <img src={`/media/inicio/gallery-${image.id}.webp`} alt={image.alt} class='h-full w-full object-cover rounded-lg' />
+            </div>
+          ))
+        }
+        {
+          images.slice(4, 8).map((image) => (
+            <div style={`aspect-ratio: ${image.aspectRatio}`}>
+              <img src={`/media/inicio/gallery-${image.id}.webp`} alt={image.alt} class='h-full w-full object-cover rounded-lg' />
+            </div>
+          ))
+        }
+      </div>
     </div>
-    <div id='carousel-third-container-mobile'>
-      {
-        images.slice(8, 13).map((image) => (
-          <div style={`aspect-ratio: ${image.aspectRatio}`}>
-            <img src={`/media/inicio/gallery-${image.id}.webp`} alt={image.alt} class='h-full w-full object-cover rounded-lg' />
-          </div>
-        ))
-      }
-      {
-        images.slice(8, 13).map((image) => (
-          <div style={`aspect-ratio: ${image.aspectRatio}`}>
-            <img src={`/media/inicio/gallery-${image.id}.webp`} alt={image.alt} class='h-full w-full object-cover rounded-lg' />
-          </div>
-        ))
-      }
+    <div class='translate-x-[-1.5rem]'>
+      <div id='carousel-third-container-mobile'>
+        {
+          images.slice(8, 13).map((image) => (
+            <div style={`aspect-ratio: ${image.aspectRatio}`}>
+              <img src={`/media/inicio/gallery-${image.id}.webp`} alt={image.alt} class='h-full w-full object-cover rounded-lg' />
+            </div>
+          ))
+        }
+        {
+          images.slice(8, 13).map((image) => (
+            <div style={`aspect-ratio: ${image.aspectRatio}`}>
+              <img src={`/media/inicio/gallery-${image.id}.webp`} alt={image.alt} class='h-full w-full object-cover rounded-lg' />
+            </div>
+          ))
+        }
+      </div>
     </div>
   </div>
   <div id='carousel-wrapper' class='hidden 2lg:flex absolute top-0 left-1/2 w-screen h-full -translate-x-1/2'>
@@ -127,9 +133,9 @@ const images = [
   const firstContainer = document.getElementById('carousel-first-container');
   const secondContainer = document.getElementById('carousel-second-container');
 
-  const firstContainerMobile = document.getElementById('carousel-first-container-mobile');
+  /* const firstContainerMobile = document.getElementById('carousel-first-container-mobile');
   const secondContainerMobile = document.getElementById('carousel-second-container-mobile');
-  const thirdContainerMobile = document.getElementById('carousel-third-container-mobile');
+  const thirdContainerMobile = document.getElementById('carousel-third-container-mobile'); */
 
   if (wrapper && section && left && center && right && firstContainer) {
     let lastLeftAspectRatio, lastCenterAspectRatio, lastRightAspectRatio;
@@ -180,14 +186,14 @@ const images = [
         firstContainer.style.transform = `translateX(-${80 * progressForTranslation}vw)`;
         secondContainer.style.transform = `translateX(${80 * progressForTranslation}vw)`;
 
-        const progressForMobileTranslation = Math.min(
+        /* const progressForMobileTranslation = Math.min(
           1,
           Math.max(0, (window.innerHeight - sectionRect.top) / (sectionRect.height + window.innerHeight))
         );
 
-        firstContainerMobile.style.transform = `translateX(-${50 * (1500 / window.innerWidth) * progressForMobileTranslation}%)`;
-        secondContainerMobile.style.transform = `translateX(${50 * (1500 / window.innerWidth) * progressForMobileTranslation}%)`;
-        thirdContainerMobile.style.transform = `translateX(-${50 * (1500 / window.innerWidth) * progressForMobileTranslation}%)`;
+        firstContainerMobile.style.transform = `translateX(-${50 * (1800 / window.innerWidth) * progressForMobileTranslation}%)`;
+        secondContainerMobile.style.transform = `translateX(${50 * (1800 / window.innerWidth) * progressForMobileTranslation}%)`;
+        thirdContainerMobile.style.transform = `translateX(-${50 * (1800 / window.innerWidth) * progressForMobileTranslation}%)`; */
       }
     };
 
@@ -196,3 +202,29 @@ const images = [
     carouselEffects();
   }
 </script>
+
+<style>
+  #carousel-first-container-mobile {
+    animation: slideLeft 13s linear infinite;
+  }
+
+  #carousel-second-container-mobile {
+    animation: slideRight 16s linear infinite;
+  }
+
+  #carousel-third-container-mobile {
+    animation: slideLeft 15s linear infinite;
+  }
+
+  @keyframes slideLeft {
+    to {
+      transform: translateX(calc(-50% - 0.75rem));
+    }
+  }
+
+  @keyframes slideRight {
+    to {
+      transform: translateX(calc(50% + 0.75rem));
+    }
+  }
+</style>
