@@ -1,0 +1,13 @@
+---
+import Button from '@/components/Button.astro';
+import Form from '@/components/Form.astro';
+---
+
+<section
+  class='!pt-0 flex flex-col gap-10 items-center !max-w-[40rem] [&>p]:font-satoshi [&>p]:text-center [&>p]:!text-3xl [&>p]:2lg:!text-4xl [&>p]:font-medium [&>p]:text-balance'
+>
+  <p>Para ayudar, podés escribirnos por WhatsApp:</p>
+  <Button href='https://wa.me/543515917215' target='_blank' class='w-full xs:w-fit'>Ir a WhatsApp →</Button>
+  <p class='mt-4'>O dejarnos un mensaje:</p>
+  <Form />
+</section>

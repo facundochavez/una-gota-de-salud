@@ -9,6 +9,11 @@ import Button from '@/components/Button.astro';
 ---
 
 <Layout title='Una Gota de Salud | Donaciones'>
+  <style is:global>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
   <ParallaxHero
     title='Donaciones'
     description='Recibimos medicamentos, alimentos no perecederos, productos de higiene personal, productos de limpieza, ropa, calzados y frazadas.'
@@ -16,7 +21,10 @@ import Button from '@/components/Button.astro';
     alt='Módulos alimentarios de Una Gota de Salud'
   />
   <section class='flex flex-col gap-6 2lg:gap-12'>
-    <h2 class='mb-8'>Lista de necesidades</h2>
+    <div class='flex flex-col sm:flex-row justify-between'>
+      <h2 class='mb-8'>Lista de necesidades</h2>
+      <Button class='h-fit' href='#donar' class='h-fit w-full xs:w-fit self-end sm:self-start'>Donar ahora &nbsp;↓</Button>
+    </div>
     <DonationList />
   </section>
   <section
