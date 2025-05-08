@@ -10,21 +10,21 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang='es'>
+<html lang="es">
   <head>
-    <meta charset='UTF-8' />
-    <meta name='description' content='Una Gota de Salud - ONG de asistencia sanitaria' />
-    <meta name='viewport' content='width=device-width' />
-    <meta property='og:title' content={title} />
-    <meta property='og:description' content='Una Gota de Salud - ONG de asistencia sanitaria' />
-    <meta property='og:image' content='/og_image.webp' />
-    <meta property='og:type' content='website' />
-    <link rel='icon' type='image/svg+xml' href='/logo-symbol.svg' />
-    <link href='https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap' rel='stylesheet' />
-    <link href='https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap' rel='stylesheet' />
+    <meta charset="UTF-8" />
+    <meta name="description" content="Una Gota de Salud - ONG de asistencia sanitaria" />
+    <meta name="viewport" content="width=device-width" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content="Una Gota de Salud - ONG de asistencia sanitaria" />
+    <meta property="og:image" content="/og_image.webp" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="/logo-symbol.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
     <title>{title}</title>
-    <script is:inline type='text/javascript' src='https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js'></script>
-    <script is:inline type='text/javascript'>
+    <script is:inline type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script is:inline type="text/javascript">
       (function () {
         emailjs.init({
           publicKey: '-CnEHK3O5IogwMNGA',
@@ -32,9 +32,23 @@ const { title } = Astro.props;
       })();
     </script>
   </head>
-  <body class='font-space-grotesk w-full relative'>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLK5HZ7G2Y"></script>
+  <script>
+    // @ts-ignore
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      // @ts-ignore
+      dataLayer.push(arguments);
+    }
+    // @ts-ignore
+    gtag('js', new Date());
+    // @ts-ignore
+    gtag('config', 'G-BLK5HZ7G2Y');
+  </script>
+  <body class="font-space-grotesk w-full relative">
     <Header />
-    <main class='w-full overflow-clip inline-flex flex-col items-center px-[5%]'>
+    <main class="w-full overflow-clip inline-flex flex-col items-center px-[5%]">
       <slot />
     </main>
     <Footer />
