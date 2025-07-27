@@ -35,7 +35,7 @@ const defaultWish = isVolunteer ? 'Ser voluntario/a' : isDonation ? 'Hacer una d
 
     <div id='user-wish-section' class={!isDonation && !isVolunteer ? '' : 'hidden'}>
       <label for='user_wish'> Quiero: </label>
-      <select id='user_wish' name='user_wish' required>
+      <select id='user_wish' name='user_wish' required class='bg-white'>
         <option value='' disabled selected={!defaultWish}>Seleccioná una opción</option>
         <option value='Ser voluntario-a' selected={defaultWish === 'Ser voluntario/a'}>Ser voluntario/a</option>
         <option value='Hacer una donación' selected={defaultWish === 'Hacer una donación'}>Hacer una donación</option>
@@ -80,7 +80,7 @@ const defaultWish = isVolunteer ? 'Ser voluntario/a' : isDonation ? 'Hacer una d
 
     <div id='user-is-section' class={isVolunteer ? '' : 'hidden'}>
       <label for='user_is'> Soy: </label>
-      <select id='user_is' name='user_is'>
+      <select id='user_is' name='user_is' required class='bg-white'>
         <option value='' disabled selected>Seleccioná una opción</option>
         <option value='Profesional de la salud'>Profesional de la salud</option>
         <option value='Estudiante en el área de la salud'>Estudiante en el área de la salud</option>
@@ -91,7 +91,7 @@ const defaultWish = isVolunteer ? 'Ser voluntario/a' : isDonation ? 'Hacer una d
 
     <div id='user-area-section' class='hidden'>
       <label for='user_area'> Área: </label>
-      <select id='user_area' name='user_area'>
+      <select id='user_area' name='user_area' required class='bg-white'>
         <option value='' disabled selected>Seleccioná una opción</option>
         <option value='Medicina'>Medicina</option>
         <option value='Pedriatría'>Pedriatría</option>
