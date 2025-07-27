@@ -10,107 +10,107 @@ const { isDonation = false, isVolunteer = false } = Astro.props;
 const defaultWish = isVolunteer ? 'Ser voluntario/a' : isDonation ? 'Hacer una donación' : '';
 ---
 
-<form id='contact-form' class='w-full font-satoshi text-lg'>
-  <div class='flex flex-col gap-6'>
+<form id="contact-form" class="w-full font-satoshi text-lg">
+  <div class="flex flex-col gap-6">
     <div>
-      <label for='user_fullname'> Nombre y apellido: </label>
-      <input type='text' id='user_fullname' name='user_fullname' required placeholder='Juan Pérez' />
+      <label for="user_fullname"> Nombre y apellido: </label>
+      <input type="text" id="user_fullname" name="user_fullname" required placeholder="Juan Pérez" />
     </div>
 
-    <div class='hidden'>
-      <label for='user_nickname'> Nickname: </label>
-      <input type='text' id='user_nickname' name='user_nickname' autocomplete='off' placeholder='juanperez' />
+    <div class="hidden">
+      <label for="user_nickname"> Nickname: </label>
+      <input type="text" id="user_nickname" name="user_nickname" autocomplete="off" placeholder="juanperez" />
     </div>
 
-    <div class='flex flex-col gap-6 w-full sm:flex-row sm:gap-5'>
-      <div class='w-full'>
-        <label for='user_phone'> Teléfono: </label>
-        <input type='tel' id='user_phone' name='user_phone' required placeholder='351 123 4567' />
+    <div class="flex flex-col gap-6 w-full sm:flex-row sm:gap-5">
+      <div class="w-full">
+        <label for="user_phone"> Teléfono: </label>
+        <input type="tel" id="user_phone" name="user_phone" required placeholder="351 123 4567" />
       </div>
-      <div class='w-full'>
-        <label for='user_email'> Email: </label>
-        <input type='email' id='user_email' name='user_email' required placeholder='juanperez@ejemplo.com' />
+      <div class="w-full">
+        <label for="user_email"> Email: </label>
+        <input type="email" id="user_email" name="user_email" required placeholder="juanperez@ejemplo.com" />
       </div>
     </div>
 
-    <div id='user-wish-section' class={!isDonation && !isVolunteer ? '' : 'hidden'}>
-      <label for='user_wish'> Quiero: </label>
-      <select id='user_wish' name='user_wish' required class='bg-white'>
-        <option value='' disabled selected={!defaultWish}>Seleccioná una opción</option>
-        <option value='Ser voluntario-a' selected={defaultWish === 'Ser voluntario/a'}>Ser voluntario/a</option>
-        <option value='Hacer una donación' selected={defaultWish === 'Hacer una donación'}>Hacer una donación</option>
-        <option value='Ofrecer transporte'>Ofrecer transporte</option>
-        <option value='Otro'>Otro</option>
+    <div id="user-wish-section" class={!isDonation && !isVolunteer ? '' : 'hidden'}>
+      <label for="user_wish"> Quiero: </label>
+      <select id="user_wish" name="user_wish" required class="bg-white select-estilo">
+        <option value="" disabled selected={!defaultWish} class="text-gray-400">Seleccioná una opción</option>
+        <option value="Ser voluntario-a" selected={defaultWish === 'Ser voluntario/a'} class="text-black">Ser voluntario/a</option>
+        <option value="Hacer una donación" selected={defaultWish === 'Hacer una donación'} class="text-black">Hacer una donación</option>
+        <option value="Ofrecer transporte" class="text-black">Ofrecer transporte</option>
+        <option value="Otro" class="text-black">Otro</option>
       </select>
     </div>
 
-    <div id='donation-section' class={isDonation ? '[&>div>label]:flex [&>div>label]:items-center [&>div>label]:!w-fit' : 'hidden'}>
+    <div id="donation-section" class={isDonation ? '[&>div>label]:flex [&>div>label]:items-center [&>div>label]:!w-fit' : 'hidden'}>
       <label> Quiero donar: </label>
-      <div class='flex flex-col mt-4'>
+      <div class="flex flex-col mt-4">
         <label>
-          <input type='checkbox' name='user_donation' value='Medicamentos' />
+          <input type="checkbox" name="user_donation" value="Medicamentos" />
           <span>Medicamentos</span>
         </label>
         <label>
-          <input type='checkbox' name='user_donation' value='Alimentos no perecederos' />
+          <input type="checkbox" name="user_donation" value="Alimentos no perecederos" />
           <span>Alimentos no perecederos</span>
         </label>
         <label>
-          <input type='checkbox' name='user_donation' value='Ropa / calzados' />
+          <input type="checkbox" name="user_donation" value="Ropa / calzados" />
           <span>Ropa / calzados / frazadas</span>
         </label>
         <label>
-          <input type='checkbox' name='user_donation' value='Productos de limpieza' />
+          <input type="checkbox" name="user_donation" value="Productos de limpieza" />
           <span>Productos de limpieza</span>
         </label>
         <label>
-          <input type='checkbox' name='user_donation' value='Productos de higiene personal' />
-          <span class='ml-2'>Productos de higiene personal</span>
+          <input type="checkbox" name="user_donation" value="Productos de higiene personal" />
+          <span class="ml-2">Productos de higiene personal</span>
         </label>
         <label>
-          <input type='checkbox' name='user_donation' value='Dinero' />
+          <input type="checkbox" name="user_donation" value="Dinero" />
           <span>Dinero</span>
         </label>
         <label>
-          <input type='checkbox' name='user_donation' value='Otro' />
+          <input type="checkbox" name="user_donation" value="Otro" />
           <span>Otro</span>
         </label>
       </div>
     </div>
 
-    <div id='user-is-section' class={isVolunteer ? '' : 'hidden'}>
-      <label for='user_is'> Soy: </label>
-      <select id='user_is' name='user_is' required class='bg-white'>
-        <option value='' disabled selected>Seleccioná una opción</option>
-        <option value='Profesional de la salud'>Profesional de la salud</option>
-        <option value='Estudiante en el área de la salud'>Estudiante en el área de la salud</option>
-        <option value='Alguien que puede proveer de un vehículo'>Alguien que puede proveer de un vehículo</option>
-        <option value='Alguien que quiere dar una mano'>Alguien que quiere dar una mano</option>
+    <div id="user-is-section" class={isVolunteer ? '' : 'hidden'}>
+      <label for="user_is"> Soy: </label>
+      <select id="user_is" name="user_is" required class="bg-white select-estilo">
+        <option value="" disabled selected class="text-gray-400">Seleccioná una opción</option>
+        <option value="Profesional de la salud" class="text-black">Profesional de la salud</option>
+        <option value="Estudiante en el área de la salud" class="text-black">Estudiante en el área de la salud</option>
+        <option value="Alguien que puede proveer de un vehículo" class="text-black">Alguien que puede proveer de un vehículo</option>
+        <option value="Alguien que quiere dar una mano" class="text-black">Alguien que quiere dar una mano</option>
       </select>
     </div>
 
-    <div id='user-area-section' class='hidden'>
-      <label for='user_area'> Área: </label>
-      <select id='user_area' name='user_area' required class='bg-white'>
-        <option value='' disabled selected>Seleccioná una opción</option>
-        <option value='Medicina'>Medicina</option>
-        <option value='Pedriatría'>Pedriatría</option>
-        <option value='Enfermería'>Enfermería</option>
-        <option value='Odontología'>Odontología</option>
-        <option value='Nutrición'>Nutrición</option>
-        <option value='Farmacia'>Farmacia</option>
-        <option value='Otro'>Otro</option>
+    <div id="user-area-section" class="hidden">
+      <label for="user_area"> Área: </label>
+      <select id="user_area" name="user_area" required class="bg-white select-estilo">
+        <option value="" disabled selected class="text-gray-400">Seleccioná una opción</option>
+        <option value="Medicina" class="text-black">Medicina</option>
+        <option value="Pedriatría" class="text-black">Pedriatría</option>
+        <option value="Enfermería" class="text-black">Enfermería</option>
+        <option value="Odontología" class="text-black">Odontología</option>
+        <option value="Nutrición" class="text-black">Nutrición</option>
+        <option value="Farmacia" class="text-black">Farmacia</option>
+        <option value="Otro" class="text-black">Otro</option>
       </select>
     </div>
 
     <div>
-      <label for='user_message'> Mensaje: </label>
-      <textarea id='user_message' name='user_message' rows='4' placeholder='Escribe tu mensaje aquí...' class='min-h-[15rem]'></textarea>
+      <label for="user_message"> Mensaje: </label>
+      <textarea id="user_message" name="user_message" rows="4" placeholder="Escribe tu mensaje aquí..." class="min-h-[15rem]"></textarea>
     </div>
 
     <button
-      type='submit'
-      class='text-lg font-medium px-8 w-fit self-end bg-primary text-white py-2 rounded-md hover:bg-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2'
+      type="submit"
+      class="text-lg font-medium px-8 w-fit self-end bg-primary text-white py-2 rounded-md hover:bg-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
     >
       Enviar
     </button>
@@ -206,5 +206,21 @@ const defaultWish = isVolunteer ? 'Ser voluntario/a' : isDonation ? 'Hacer una d
       console.error('Error al enviar el formulario:', error);
       alert('Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.');
     }
+  });
+
+  // Actualizar el estilo del select al cargar la página
+  function updateSelectStyle(selectEl: any) {
+    if (selectEl.value === '') {
+      selectEl.classList.remove('text-black');
+      selectEl.classList.add('text-gray-400');
+    } else {
+      selectEl.classList.remove('text-gray-400');
+      selectEl.classList.add('text-black');
+    }
+  }
+
+  document.querySelectorAll('.select-estilo').forEach((select) => {
+    updateSelectStyle(select); // estilo inicial
+    select.addEventListener('change', () => updateSelectStyle(select));
   });
 </script>
